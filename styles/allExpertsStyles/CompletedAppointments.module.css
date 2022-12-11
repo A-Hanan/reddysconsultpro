@@ -15,6 +15,7 @@
   background-color: whitesmoke;
   border-left: 1px solid lightgray;
   margin-left: 280px;
+  gap: 20px;
   padding: 30px;
   align-items: center;
 }
@@ -49,6 +50,7 @@
   width: 50vw;
   gap: 10px;
   flex-direction: column;
+  margin-top: 20px;
   background-color: white;
   padding: 20px;
 }
