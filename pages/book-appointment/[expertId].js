@@ -22,7 +22,7 @@ import Image from "next/image";
 
 const BookAppointment3 = () => {
   const router = useRouter();
-  const expertId = router.query?.expertId;
+  const expertId = router?.query?.expertId;
   const [expert, setExpert] = useState({});
   const [{ user, activeCategory }, dispatch] = useStateValue();
 
@@ -34,7 +34,7 @@ const BookAppointment3 = () => {
   useEffect(() => {
     // console.log("router query", router.query);
     // console.log("expertId", expertId);
-    if (router.isReady) {
+    if (router?.isReady) {
       api
         .get(`/experts/getExpertById/${expertId}`)
         .then((res) => {
@@ -68,7 +68,7 @@ const BookAppointment3 = () => {
         }
       })
       .catch((err) => console.log(err.message));
-  }, [router.isReady]);
+  }, [router?.isReady]);
 
   return (
     <ApplicationLayout>
