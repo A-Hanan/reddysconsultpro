@@ -11,8 +11,8 @@ import React, { useState, useEffect } from "react";
 import api from "../../utils/api";
 import Swal from "sweetalert2";
 import StarIcon from "@mui/icons-material/Star";
-import Reviews from "../Components/allExperts/Reviews";
-import BookApptimeSlots from "../Components/allExperts/BookAppTimeSlots";
+import Reviews from "../../Components/allExperts/Reviews";
+import BookApptimeSlots from "../../Components/allExperts/BookAppTimeSlots";
 import { useRouter } from "next/router";
 import { useStateValue } from "../../StateProvider";
 import ApplicationLayout from "../../components/ApplicationLayout";
@@ -71,7 +71,7 @@ const BookAppointment3 = () => {
       .catch((err) => console.log(err.message));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router?.isReady]);
-  console.log("");
+
   return (
     <ApplicationLayout>
       <div className={styles.book__appointment__container}>
