@@ -201,13 +201,18 @@ const Login = ({ setShowAuthForm, fromNavbar }) => {
           {errors?.confirmPassword && (
             <p className={styles.error__para}>{errors?.confirmPassword}</p>
           )}
-          <div className={styles.show__password__container}>
-            <span onClick={handleForgetPasswordChange}>
-              <FontAwesomeIcon icon={showLoginPassword ? faEyeSlash : faEye} />
-            </span>
+          {formType == "signIn" && (
+            <div className={styles.show__password__container}>
+              <span onClick={handleForgetPasswordChange}>
+                <FontAwesomeIcon
+                  icon={showLoginPassword ? faEyeSlash : faEye}
+                />
+              </span>
 
-            <p>Show Password</p>
-          </div>
+              <p>Show Password</p>
+            </div>
+          )}
+
           {formType == "signIn" && (
             <div className={styles.radio__options__usertype}>
               <h1>Login as</h1>
