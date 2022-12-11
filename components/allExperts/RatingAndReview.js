@@ -74,11 +74,11 @@ function RatingAndReview({ setShowRatingModal, appointment }) {
         </button>
         <div className="rating__wrapper">
           <h1>
-            Rate how was your experience with the Lawyer
+            Rate how was your experience with the Expert
             {/* <span> {doctorInfo?.name}</span>. */}
           </h1>
           <div className="rating__stars">
-            <p>Professional Skills</p> &nbsp;
+            <p>Professionalism</p> &nbsp;
             <span
               onClick={() => setProfessionalism(1)}
               className={
