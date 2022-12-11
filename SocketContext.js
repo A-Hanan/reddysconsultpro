@@ -17,7 +17,8 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:8990");
+const socket = io("http://localhost:5000");
+// const socket = io("https://consultproapi.herokuapp.com");
 //const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
@@ -36,7 +37,7 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     navigator.mediaDevices
-       .getUserMedia({ video: true, audio: true })
+      .getUserMedia({ video: true, audio: true })
       // .getUserMedia({ video: showMyVideo, audio: showMyAudio })
       .then((currentStream) => {
         setStream(currentStream);

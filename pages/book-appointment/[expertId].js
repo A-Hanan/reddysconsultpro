@@ -69,9 +69,7 @@ const BookAppointment3 = () => {
       })
       .catch((err) => console.log(err.message));
   }, [router.isReady]);
-  useEffect(() => {
-    // console.log("expert>>> ", expert);
-  }, [expert]);
+
   return (
     <ApplicationLayout>
       <div className={styles.book__appointment__container}>

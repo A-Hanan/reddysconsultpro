@@ -5,7 +5,7 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://consultproapi.herokuapp.com/api",
 });
 // if (localStorage.token) {
 //   api.defaults.headers.common["auth-token"] = localStorage.getItem("token");
