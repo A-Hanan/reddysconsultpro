@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ApplicationLayout from "../components/ApplicationLayout";
 import { getPendingAppointments } from "../Actions/appointmentActions";
-import PendingAppointment from "../Components/allExperts/PendingAppointment";
+import PendingAppointment from "../components/allExperts/PendingAppointment";
 import styles from "../styles/allExpertsStyles/CompletedAppointments.module.css";
 import { useStateValue } from "../StateProvider";
 
 const PendingAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [{ user }, dispatch] = useStateValue();
+  console.log();
   useEffect(() => {
     let User = localStorage?.getItem("consult_pro_user")
       ? JSON.parse(localStorage?.getItem("consult_pro_user"))

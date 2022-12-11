@@ -11,8 +11,8 @@ import React, { useState, useEffect } from "react";
 import api from "../../utils/api";
 import Swal from "sweetalert2";
 import StarIcon from "@mui/icons-material/Star";
-import Reviews from "../../Components/allExperts/Reviews";
-import BookApptimeSlots from "../../Components/allExperts/BookAppTimeSlots";
+import Reviews from "../../components/allExperts/Reviews";
+import BookApptimeSlots from "../../components/allExperts/BookAppTimeSlots";
 import { useRouter } from "next/router";
 import { useStateValue } from "../../StateProvider";
 import ApplicationLayout from "../../components/ApplicationLayout";
@@ -22,6 +22,7 @@ import Image from "next/image";
 
 const BookAppointment3 = () => {
   const router = useRouter();
+  console.log();
 
   const [expert, setExpert] = useState({});
   const [{ user, activeCategory }, dispatch] = useStateValue();
