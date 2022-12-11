@@ -71,7 +71,7 @@ const BookAppointment3 = () => {
       .catch((err) => console.log(err.message));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router?.isReady]);
-
+  console.log("");
   return (
     <ApplicationLayout>
       <div className={styles.book__appointment__container}>
