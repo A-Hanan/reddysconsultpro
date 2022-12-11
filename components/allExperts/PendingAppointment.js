@@ -70,16 +70,16 @@ const PendingAppointment = ({ appointment }) => {
             .post("/auth/send-booked-appointment-success-email", {
               appointment: res?.data,
             })
-            .then((res2) =>
+            .then((res2) => {
               console.log(
                 "response from sending booked appointment mail",
                 res2.data
-              )
-            )
+              );
+              Swal.fire("Appointment Confirmed!", "Check it", "success");
+              router.push("/dashboard/upcoming__appointments");
+            })
             .catch((err) => console.log(err));
           //  alert("appointment confirmed");
-          Swal.fire("Appointment Confirmed!", "Check it", "success");
-          router.push("/dashboard/upcoming__appointments");
         }
       })
       .catch((err) => console.log(err));
