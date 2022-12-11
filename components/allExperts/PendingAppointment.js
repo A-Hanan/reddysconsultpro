@@ -9,7 +9,7 @@ import { useStateValue } from "../../StateProvider";
 // import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import styles from "../../styles/allExpertsStyles/CompletedAppointments.module.css";
-import Image from 'next/image'
+import Image from "next/image";
 
 const PendingAppointment = ({ appointment }) => {
   const [showPurchaseModel, setShowPurchaseModel] = useState(false);
@@ -66,6 +66,17 @@ const PendingAppointment = ({ appointment }) => {
       .then((res) => {
         if (res.data) {
           console.log("updated appointments", res.data);
+          api
+            .post("/auth/send-booked-appointment-success-email", {
+              appointment: res?.data,
+            })
+            .then((res2) =>
+              console.log(
+                "response from sending booked appointment mail",
+                res2.data
+              )
+            )
+            .catch((err) => console.log(err));
           //  alert("appointment confirmed");
           Swal.fire("Appointment Confirmed!", "Check it", "success");
           router.push("/dashboard/upcoming__appointments");
@@ -88,7 +99,7 @@ const PendingAppointment = ({ appointment }) => {
               }
               width={20}
               height={20}
-              alt='profile'
+              alt="profile"
             />
             <h3>{appointment.expert.name}</h3>
           </div>
