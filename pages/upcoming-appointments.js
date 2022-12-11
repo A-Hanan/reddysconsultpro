@@ -48,7 +48,7 @@ const UpcomingAppointments = () => {
               new Date(d?.appointmentDate).setHours(0, 0, 0, 0) <
               new Date().setHours(0, 0, 0, 0)
             ) {
-              cancelAppointment(d?._id, navigate, user);
+              cancelAppointment(d?._id, router);
             }
           });
         console.log("upcomingAppointments>>", response);
