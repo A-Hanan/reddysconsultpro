@@ -1,0 +1,271 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+
+.video__call__container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #0c0c0c;
+  overflow: hidden;
+  background-color: #0c0c0c;
+  background-color: $grayishBlack;
+}
+.video__call__navbar {
+  height: max-content;
+  width: 100vw;
+  height: 8vh;
+  position: absolute;
+  background-color: teal;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.video__call__navbar > h3 {
+  font-size: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 8vh;
+}
+/**************  videoplayer *****************************************************/
+.video__call__videoplayer__container {
+  background-color: #0c0c0c;
+  margin-top: 0vh;
+  height: 87vh;
+  width: 100vw;
+  display: grid;
+
+  grid-template-columns: 49vw 49vw;
+  gap: 0 0;
+  position: absolute;
+  top: 0;
+  background-color: #0c0c0c;
+  background-color: $logosBackgroundColor;
+
+  background-color: white;
+  background-color: transparent;
+  //   background-color: red;
+
+  gap: 2vw;
+  @include media("<=1200px") {
+    // height: 44vw;
+    grid-template-columns: 98%;
+    margin-left: 1%;
+  }
+  > div {
+    background-color: #0c0c0c;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: relative;
+
+    background-color: #0c0c0c;
+    background-color: $logosBackgroundColor;
+    background-color: #fff;
+    // border: 3px solid #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: transparent;
+
+    > video {
+      margin: 0px;
+      width: 49vw;
+      height: 82vh;
+      //   position: absolute;
+      //   top: 0;
+      //   top: 0;
+      background-color: #0c0c0c;
+      background-color: $logosBackgroundColor;
+      width: 110%;
+      height: auto;
+      @include media("<=1200px") {
+      }
+    }
+    > h5 {
+      height: max-content;
+      min-height: 50px;
+
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+
+      color: white;
+      background-color: #fff;
+      background-color: #0c0c0c66;
+
+      color: $darkBlueColor;
+      width: 100%;
+      @include headingTypography(1.1rem);
+      color: white;
+      padding: 15px;
+    }
+  }
+}
+/***** notifications ******/
+.video__call__notification__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: white;
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  top: 0vh;
+  font-size: 1.1rem;
+  background-color: $darkBlueColor;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  > h1 {
+    font-size: 1.1rem;
+  }
+  > button {
+    margin-left: 15px;
+    padding: 10px;
+    background-color: $yellowishColor;
+    color: white;
+    cursor: pointer;
+    font-family: var(--body-font);
+    border: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: white;
+      color: $yellowishColor;
+      outline: 2px solid $yellowishColor;
+    }
+  }
+}
+/******   sidebar  *************/
+.video__call__options__container {
+  background-color: #0c0c0c;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  /* border: 2px solid teal; */
+  border-bottom: none;
+  padding: 0px;
+  height: 70px;
+  padding: 0 30px;
+  background-color: #0c0c0c;
+  background-color: $logosBackgroundColor;
+  background-color: transparent;
+  background-color: $logosBackgroundColor;
+  max-height: 12vh;
+
+  > div {
+    margin-bottom: 10px;
+    background-color: #0c0c0c;
+    display: flex;
+    align-items: flex-start;
+    background-color: #0c0c0c;
+    background-color: $logosBackgroundColor;
+    border-radius: 10px;
+    min-height: 70px;
+    min-width: 40vw;
+    align-items: center;
+    justify-content: center;
+    background-color: $logosBackgroundColor;
+    gap: 15px;
+    min-width: 295px;
+    > button {
+      @include buttonProps;
+      display: flex;
+      gap: 30px;
+      border-radius: 4px;
+    }
+    @include media("<=1200px") {
+      // margin-bottom: 2px;
+    }
+  }
+}
+
+.video__call__options__container__buttons > button > .MuiSvgIcon-root {
+  color: white;
+}
+.video__call__options__container__buttons > .startCall__btn {
+  background-color: var(--light-blue);
+  color: white;
+  cursor: pointer;
+}
+.video__call__options__container__buttons > .startCall__btn:hover {
+  background-color: white;
+  color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+}
+.video__call__options__container__buttons
+  > .startCall__btn:hover
+  > .MuiSvgIcon-root {
+  color: var(--light-blue);
+}
+.video__call__options__container__buttons > .endCall__btn {
+  color: white;
+  background-color: rgb(160, 13, 13);
+}
+.video__call__options__container__buttons > .endCall__btn:hover {
+  background-color: white;
+  color: rgb(160, 13, 13);
+  border: 2px solid rgb(160, 13, 13);
+}
+.video__call__options__container__buttons
+  > .endCall__btn:hover
+  > .MuiSvgIcon-root {
+  color: rgb(160, 13, 13);
+}
+
+/**************** changing ****************/
+// .video__call__videoplayer__container > .screen {
+//   background-color: #0c0c0c;
+
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+
+//   position: relative;
+
+//   background-color: #0c0c0c;
+//   background-color: $logosBackgroundColor;
+// }
+.video__call__videoplayer__container > .screen > h5 {
+  //   color: black;
+  //   background-color: whitesmoke;
+  //   color: black;
+  //   height: 10vh;
+  //   width: 49vw;
+  //   display: flex;
+  //   text-align: center;
+  //   justify-content: center;
+  //   align-items: center;
+  //   position: absolute;
+  //   bottom: 0;
+  //   font-size: 1.3rem;
+  //   background-color: var(--light-blue);
+  //   color: white;
+}
+.video__call__videoplayer__container > .screen > video {
+}

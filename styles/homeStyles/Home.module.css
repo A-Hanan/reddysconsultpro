@@ -1,0 +1,155 @@
+/**
+*
+* Testing
+*
+**/
+/* navbar css */
+.nav__wrapper {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+.nav__wrapper > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav__wrapper > div > svg {
+  cursor: pointer;
+}
+
+.mobile__dashboard__navigator {
+  display: none !important;
+  cursor: pointer;
+}
+@media (max-width: 980px) {
+  .mobile__dashboard__navigator {
+    display: block !important;
+  }
+}
+
+.nav__logo__text {
+  font-size: 1.4rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-weight: 700;
+}
+@media (max-width: 415px) {
+  .nav__logo__text {
+    font-size: 1.1rem;
+  }
+}
+
+.logout__box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.logout__box h5 {
+  color: #46484b;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.logout__box span {
+  background-color: whitesmoke;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  svg-height: 20px;
+  svg-width: 20px;
+}
+
+.yellowText {
+  color: #ff9e15;
+}
+
+.blueText {
+  color: #006;
+}
+
+.nav__buttons__wrapper {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: right;
+  gap: 20px;
+  margin-right: 6px;
+}
+@media (max-width: 415px) {
+  .nav__buttons__wrapper {
+    gap: 10px;
+    margin-right: 3px;
+  }
+}
+
+.buttonOne {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.buttonOne:hover {
+  color: gray;
+}
+@media (max-width: 415px) {
+  .buttonOne {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+.buttonTwo {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-color: #ff9e15;
+  color: #ff9e15;
+}
+@media (max-width: 415px) {
+  .buttonTwo {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+@media (max-width: 370px) {
+  .buttonTwo {
+    display: none;
+  }
+}
+
+/***** hero section css****//*# sourceMappingURL=Home.module.css.map */

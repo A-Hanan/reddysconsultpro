@@ -1,0 +1,118 @@
+@import "../mixin";
+@import "../var";
+.expert__boxes__wrapper {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+  min-height: 100vh;
+}
+.ExpertBox {
+  background-color: #fff;
+  height: 320px;
+  width: 280px;
+  position: relative;
+  padding-top: 60px;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  h1,
+  p {
+    text-align: center;
+  }
+  span {
+    margin-left: 47%;
+    transform: translateX(-50%);
+  }
+  button {
+    @include buttonProps;
+    @include placeitCenter;
+    margin-top: 20px;
+    &:hover {
+      background-color: $logosBackgroundColor;
+      color: white;
+      border: none;
+    }
+  }
+  h1 {
+    @include headingTypography(1rem);
+    margin-bottom: 10px;
+    font-weight: 400;
+    width: 80%;
+    @include placeitCenter;
+  }
+  p {
+    @include paraTypography(0.8rem);
+    font-weight: 500;
+    color: $secondaryColor;
+  }
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    cursor: pointer;
+  }
+}
+.footer__of__expert__box {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  @include rowFlexAndSpaceBetween;
+  div {
+    @include flexColumnAndCenter;
+    flex: 0.5;
+  }
+  h6 {
+    @include headingTypography(0.9rem);
+  }
+}
+.image__box {
+  position: absolute;
+  top: -30px;
+  width: 70px;
+  height: 70px;
+  // border: 2px solid $yellowishColor;
+  @include placeitCenter;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  //   background: url("/images/manFace.jpg");
+  //   @include backgroundImageProps;
+  border: 2px solid $yellowishColor;
+  @include flexColumnAndCenter;
+  h5 {
+    text-align: center;
+    @include headingTypography(1.6rem);
+    color: $grayishBlack;
+  }
+}
+.image__of__expert {
+  width: auto;
+  height: 100%;
+  //   border-radius: 50%;
+  //   @include placeitCenter;
+  //   border: 3px solid $yellowishColor;
+}
+.rating__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0px !important;
+  align-items: center;
+  // background-color: beige;
+  // width: 60px !important;
+  // border: 1px solid black;
+  color: goldenrod;
+  font-size: 1rem;
+  padding-left: 17px;
+  height: 40px;
+  margin-top: -10px;
+
+  .MuiSvgIcon-root {
+    color: goldenrod !important;
+    margin: 0 !important;
+    display: none;
+  }
+  span {
+    // border: 1px solid black;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

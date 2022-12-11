@@ -1,0 +1,144 @@
+@import "../mixin";
+@import "../var";
+.pending__appointments__container {
+  flex: 1;
+  @include flexColumnAndCenter; //   background-color: antiquewhite;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @include container;
+  background-color: whitesmoke;
+  border-left: 1px solid lightgray;
+  margin-left: 280px;
+  min-height: 100vh;
+  align-items: center;
+  > h1 {
+    @include headingTypography(1.6rem);
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: -10px;
+  }
+}
+
+.pending__appointments {
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+  padding: 30px;
+  gap: 30px;
+  position: relative;
+  align-items: center;
+}
+.pending__appointment {
+  padding: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  gap: 10px;
+}
+.pending__appointments > h1 {
+  font-size: 1.3rem;
+  font-family: var(--heading-font);
+}
+.pending__appointment .lawyer__info {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid gray; */
+}
+.pending__appointment .lawyer__info img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+.pending__appointment .lawyer__info h3 {
+  font-size: 1.1rem;
+}
+.pending__appointment .lawyer__info h5 {
+  font-size: 0.9rem;
+}
+.pending__appointment .appointment__info {
+  flex: 0.3;
+  /* border: 1px solid green; */
+  padding: 10px;
+}
+.pending__appointment .appointment__info > h6 {
+  font-size: 0.9rem;
+}
+.pending__appointment .appointment__info > span {
+  font-size: 1.1rem;
+  font-weight: bolder;
+  width: 100px;
+}
+.pending__appointment .payment__modal {
+  display: flex;
+  flex: 0.4;
+  flex-direction: column;
+}
+.pending__appointment .payment__modal .label {
+  font-size: 1.1rem;
+}
+.pending__appointment .payment__modal button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: var(--light-blue);
+  border-radius: 5px;
+}
+.pending__appointment .payment__modal button:hover {
+  background-color: var(--dark-blue);
+}
+.pending__appointment .options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pending__appointment .options > button {
+  border: none;
+  cursor: pointer;
+  background-color: var(--light-blue);
+  color: white;
+  height: 50px;
+  width: 50px;
+}
+.pending__appointment .options > button > a {
+  text-decoration: none;
+  color: white;
+}
+.pending__appointment .options > button:hover {
+  background-color: var(--dark-blue);
+}
+.pending__appointment .options > button .MuiSvgIcon-root {
+  color: white;
+}
+
+.pending__appointments .payment__modal {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  z-index: 1;
+  background-color: white;
+  height: max-content;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.pay__fee .stripe__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.stripe__container button {
+  border: none;
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 5px;
+}

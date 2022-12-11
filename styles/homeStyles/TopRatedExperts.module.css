@@ -1,0 +1,122 @@
+.top__rated__experts__wrapper {
+  background-color: #fff3e2;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 30px 0 0px 0;
+  padding: 60px 70px;
+  padding-bottom: 80px;
+}
+.top__rated__experts__wrapper header {
+  display: flex;
+  margin-left: 30px;
+  flex-direction: column;
+  gap: 5px;
+}
+.top__rated__experts__wrapper header h1 {
+  font-size: 1.4rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+.top__rated__experts__wrapper header p {
+  color: #46484b;
+  font-size: 0.875rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #46484b;
+  font-weight: 300;
+}
+
+.expert__boxes__wrapper {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.ExpertBox {
+  background-color: #fff;
+  height: 210px;
+  width: 280px;
+  position: relative;
+  padding-top: 60px;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.ExpertBox h1,
+.ExpertBox p {
+  text-align: center;
+}
+.ExpertBox h1 {
+  font-size: 1rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-weight: 400;
+  width: 80%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.ExpertBox p {
+  color: #46484b;
+  font-size: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 500;
+  color: #46484b;
+}
+.ExpertBox:hover {
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.footer__of__expert__box {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__of__expert__box div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 0.5;
+}
+.footer__of__expert__box h6 {
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.image__box {
+  position: absolute;
+  top: -30px;
+  width: 70px;
+  height: 70px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  background: url("/images/manFace.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+.image__of__expert {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #ff9e15;
+}/*# sourceMappingURL=TopRatedExperts.module.css.map */

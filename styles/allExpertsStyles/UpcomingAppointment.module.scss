@@ -1,0 +1,145 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+.upcoming__appointments__container {
+  flex: 1;
+  @include flexColumnAndCenter; //   background-color: antiquewhite;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @include container;
+  background-color: whitesmoke;
+  border-left: 1px solid lightgray;
+  margin-left: 280px;
+  min-height: 100vh;
+  align-items: center;
+  gap: 30px;
+  @include media("<=980px") {
+    margin-left: 0;
+    width: 100vw;
+    align-items: center;
+  }
+  > h1 {
+    @include headingTypography(1.6rem);
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: -10px;
+  }
+  padding: 30px;
+
+  h4 {
+    @include headingTypography(1.5rem);
+    padding-left: 40px;
+    margin-top: 20px;
+  }
+}
+
+.upcoming__appointments {
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+  padding: 30px;
+  gap: 30px;
+  align-items: center;
+}
+.upcoming__appointment {
+  padding: 20px;
+  // background-color: whitesmoke;
+  // border: 1px solid lightgray;
+  display: flex;
+  position: relative;
+  width: 50vw;
+  gap: 10px;
+  flex-direction: column;
+  // border-bottom: 1px solid black;
+  background-color: white;
+  padding: 40px;
+  @include media("<=980px") {
+    width: 80vw;
+    padding-top: 50px;
+  }
+  @include media("<=500px") {
+    width: 95vw;
+    padding-left: 12px;
+  }
+}
+.remaining__time {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: $creamColor;
+  padding: 4px 7px;
+  border-radius: 4px;
+  @include media("<=980px") {
+    top: 10px;
+  }
+}
+.row__one {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  @include media("<=980px") {
+    grid-template-columns: 50% 50%;
+  }
+  > div {
+    > img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+    }
+    > h3 {
+      @include headingTypography(1.2rem);
+    }
+    > h5 {
+      color: $grayishBlack;
+      @include headingTypography(0.9rem);
+      margin-left: 4px;
+    }
+    > span {
+      color: red;
+      @include headingTypography(0.815rem);
+      color: $grayishBlack;
+    }
+    > h6 {
+      @include headingTypography(1rem);
+      margin-bottom: 13px;
+    }
+  }
+}
+.row__two {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    > span {
+      color: red;
+      @include headingTypography(0.815rem);
+      color: $grayishBlack;
+    }
+    > h6 {
+      @include headingTypography(1rem);
+      margin-bottom: 0px;
+    }
+    > h3 {
+      @include paraTypography(1rem);
+      font-weight: 500;
+    }
+  }
+}
+.row__three {
+  margin-top: 10px;
+  button {
+    background-color: red;
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.setNow__btn {
+  @include buttonProps;
+}

@@ -1,0 +1,146 @@
+.expert__boxes__wrapper {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+  min-height: 100vh;
+}
+
+.ExpertBox {
+  background-color: #fff;
+  height: 320px;
+  width: 280px;
+  position: relative;
+  padding-top: 60px;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.ExpertBox h1,
+.ExpertBox p {
+  text-align: center;
+}
+.ExpertBox span {
+  margin-left: 47%;
+  transform: translateX(-50%);
+}
+.ExpertBox button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+.ExpertBox button:hover {
+  background-color: #333385;
+  color: white;
+  border: none;
+}
+.ExpertBox h1 {
+  font-size: 1rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-weight: 400;
+  width: 80%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.ExpertBox p {
+  color: #46484b;
+  font-size: 0.8rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 500;
+  color: #46484b;
+}
+.ExpertBox:hover {
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.footer__of__expert__box {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__of__expert__box div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 0.5;
+}
+.footer__of__expert__box h6 {
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.image__box {
+  position: absolute;
+  top: -30px;
+  width: 70px;
+  height: 70px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  border: 2px solid #ff9e15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image__box h5 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3c;
+}
+
+.image__of__expert {
+  width: auto;
+  height: 100%;
+}
+
+.rating__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0px !important;
+  align-items: center;
+  color: goldenrod;
+  font-size: 1rem;
+  padding-left: 17px;
+  height: 40px;
+  margin-top: -10px;
+}
+.rating__container .MuiSvgIcon-root {
+  color: goldenrod !important;
+  margin: 0 !important;
+  display: none;
+}
+.rating__container span {
+  margin: 0 !important;
+  padding: 0 !important;
+}/*# sourceMappingURL=ExpertBox.module.css.map */

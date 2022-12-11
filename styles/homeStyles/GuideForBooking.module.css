@@ -1,0 +1,110 @@
+/**
+*
+* Testing
+*
+**/
+.guide__wrapper {
+  margin-top: 40px;
+  width: 100%;
+  padding: 20px;
+}
+.guide__wrapper h1 {
+  font-size: 1.4rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-weight: 400;
+  text-align: center;
+}
+
+.guide__container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-height: 300px;
+  padding: 30px 10px;
+}
+@media (max-width: 570px) {
+  .guide__container {
+    flex-direction: column;
+  }
+}
+
+.phone__wrapper {
+  flex: 0.5;
+  display: flex;
+  justify-content: right;
+}
+@media (max-width: 570px) {
+  .phone__wrapper {
+    justify-content: center;
+  }
+}
+.phone__wrapper > div {
+  width: 300px;
+  height: 500px;
+  background: url("/images/phoneScreen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+  margin-right: 30px;
+}
+.phone__wrapper img {
+  margin-right: 40px;
+}
+
+.guidelines__container {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.guidelines__container div {
+  display: flex;
+  align-items: center;
+  flex: 0.1;
+}
+.guidelines__container div p {
+  color: #46484b;
+  font-size: 0.9rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 500;
+  color: #232426;
+}
+.guidelines__container div p span {
+  color: #006;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.guidelines__container svg {
+  margin-right: 20px;
+  height: 17px;
+  color: #ff9e15;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  margin-top: 3px;
+  border-radius: 50%;
+  padding: 9px;
+}
+.guidelines__container button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-color: #006;
+  background-color: #006;
+  color: #fff;
+  margin-top: 20px;
+}/*# sourceMappingURL=GuideForBooking.module.css.map */

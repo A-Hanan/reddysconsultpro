@@ -1,0 +1,61 @@
+@mixin headingTypography($size) {
+  font-size: $size;
+  color: $primaryColor;
+  font-family: $primaryFont;
+  font-weight: 600;
+}
+@mixin paraTypography($size: $paraSize) {
+  color: $secondaryColor;
+  font-size: $size;
+  font-family: $primaryFont;
+  font-weight: 300;
+}
+
+@mixin container {
+  width: 100%;
+  padding: 20px;
+}
+@mixin backgroundImageProps {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+@mixin rowFlexAndSpaceBetween {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flexColumnAndCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin buttonProps {
+  font-family: $primaryFont;
+  font-weight: 600;
+  color: $secondaryColor;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@mixin placeitCenter {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+@mixin textInputFieldProps {
+  border: none;
+  background-color: whitesmoke;
+  font-size: 0.9rem;
+  padding: 9px 5px;
+  border-radius: 4px;
+}

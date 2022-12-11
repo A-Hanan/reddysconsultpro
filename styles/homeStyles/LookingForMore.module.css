@@ -1,0 +1,144 @@
+/**
+*
+* Testing
+*
+**/
+.looking__for__more__wrapper {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #fff;
+  margin-bottom: 0px;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 5%;
+  justify-content: center;
+  padding: 50px 20%;
+}
+@media (min-width: 416px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 416px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .looking__for__more__wrapper {
+    padding: 30px 8%;
+    grid-template-columns: 46% 46%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1366px) {
+  .looking__for__more__wrapper {
+    padding: 30px 10%;
+  }
+}
+@media (max-width: 570px) {
+  .looking__for__more__wrapper {
+    padding: 30px 10%;
+    grid-template-columns: 80%;
+    gap: 12%;
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 415px) {
+  .looking__for__more__wrapper {
+    padding: 30px 5%;
+    grid-template-columns: 90%;
+    gap: 12%;
+    margin-bottom: 70px;
+  }
+}
+.looking__for__more__wrapper > div > h1 {
+  font-size: 1.5rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.looking__for__more__wrapper > div > h1 > svg {
+  color: #ff9e15;
+  margin-right: 10px;
+}
+.looking__for__more__wrapper > div > p {
+  font-weight: 300;
+  color: #46484b;
+  font-size: 0.875rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.contact__us__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.contact__us__form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+.contact__us__form > div > label {
+  color: #46484b;
+  font-size: 0.875rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 600;
+}
+.contact__us__form > div > input {
+  border: none;
+  background-color: whitesmoke;
+  font-size: 0.9rem;
+  padding: 9px 5px;
+  border-radius: 4px;
+  width: 100%;
+}
+.contact__us__form > div > input:focus {
+  outline: none;
+}
+.contact__us__form > div > textarea {
+  border: none;
+  background-color: whitesmoke;
+  font-size: 0.9rem;
+  padding: 9px 5px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+}
+.contact__us__form > button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-color: #ff9e15;
+  color: #ff9e15;
+}
+.contact__us__form > button:hover {
+  background-color: #ff9e15;
+  color: white;
+}
+.contact__us__form > button:active {
+  color: #ff9e15;
+  background-color: white;
+}
+
+.error__para {
+  color: #46484b;
+  font-size: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 500;
+  color: red;
+}/*# sourceMappingURL=LookingForMore.module.css.map */

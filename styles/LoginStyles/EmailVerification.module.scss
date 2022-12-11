@@ -1,0 +1,60 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+
+.verifyYourAccountWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
+  @include flexColumnAndCenter;
+  > div {
+    background-color: white;
+    width: 40vw;
+    max-width: 420px;
+    min-width: 280px;
+    min-height: 300px;
+    padding: 20px;
+    @include flexColumnAndCenter;
+    gap: 30px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        @include paraTypography(0.9rem);
+        font-weight: 300;
+      }
+      input {
+        @include textInputFieldProps;
+      }
+      button {
+        margin-top: 0px;
+      }
+    }
+    > h1 {
+      @include headingTypography(1.3rem);
+      text-align: center;
+      color: $grayishBlack;
+    }
+    > span {
+      border: 2px solid $yellowishColor;
+      padding: 15px;
+      border-radius: 50%;
+      > svg {
+        width: 50px;
+        height: 50px;
+        color: $logosBackgroundColor;
+      }
+    }
+    button {
+      margin: 20px 0;
+      @include buttonProps;
+
+      background-color: $logosBackgroundColor;
+      color: white;
+      &:hover {
+        background-color: $darkBlueColor;
+      }
+    }
+  }
+}

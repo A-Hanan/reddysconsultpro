@@ -1,0 +1,150 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+.user__options__wrapper {
+  height: 200px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  > div {
+    height: 80%;
+    width: 350px;
+
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0px 10px;
+      h1 {
+        @include headingTypography(1rem);
+        margin-top: 20px;
+      }
+      p {
+        @include paraTypography(0.75rem);
+        font-weight: 400;
+      }
+      button {
+        @include buttonProps;
+        margin: 0;
+        transform: translateX(0);
+        margin-top: 30px;
+        padding: 4px 14px;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+.options__box__one {
+  background-color: #fff3e8;
+
+  span {
+    height: 100%;
+    width: 100%;
+    @include flexColumnAndCenter;
+    svg {
+      height: 40%;
+      color: rgb(219, 160, 105);
+    }
+  }
+}
+.options__box__two {
+  background-color: #e8f1ff;
+  span {
+    height: 100%;
+    width: 100%;
+    @include flexColumnAndCenter;
+    svg {
+      height: 80px;
+      color: rgb(78, 116, 177);
+    }
+  }
+}
+.user__option__button__one {
+  background-color: #ff9e15 !important;
+  color: #fff !important;
+  border: none !important;
+}
+.user__option__button__two {
+  background-color: #000066 !important;
+  color: #fff !important;
+  border: none !important;
+}
+.tc__conatainer {
+  @include container;
+  background-color: whitesmoke;
+  margin-top: 6px;
+
+  h1 {
+    margin-top: 30px;
+    @include headingTypography(1.5rem);
+    font-weight: 500;
+    text-align: center;
+  }
+  button {
+    @include buttonProps;
+    @include placeitCenter;
+    margin-top: 50px;
+    &:hover {
+      color: gray;
+    }
+  }
+}
+.categoriesGrid {
+  // display: grid;
+  // grid-template-columns: 18% 18% 18% 18%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include placeitCenter;
+  width: 80vw;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 50px;
+  @include media("<=922px") {
+    width: 100vw;
+  }
+  @include media("<=phone") {
+    flex-direction: column;
+  }
+
+  div {
+    @include flexColumnAndCenter;
+    justify-content: flex-start;
+    flex: 0.18;
+    @include media("<=922px") {
+      flex: 0.22;
+    }
+    // width: 330px;
+    gap: 10px;
+    span {
+      background-color: $logosBackgroundColor;
+      width: 60px;
+      height: 60px;
+      @include flexColumnAndCenter;
+      border-radius: 50%;
+      svg {
+        font-size: 1.5rem;
+        color: #fff;
+        padding: 10px;
+      }
+      &:hover {
+        // background-color: $yellowishColor;
+        cursor: pointer;
+      }
+    }
+    p {
+      text-align: center;
+      @include paraTypography(0.97rem);
+      color: $grayishBlack;
+      font-weight: 500;
+    }
+  }
+}

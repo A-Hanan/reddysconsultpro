@@ -1,0 +1,60 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+.footer__wrapper {
+  background-color: #222;
+  width: 100%;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  @include container;
+  h1 {
+    @include headingTypography(1.6rem);
+    font-weight: 700;
+    color: $yellowishColor;
+    span {
+      color: #fff;
+      padding-left: 2px;
+    }
+  }
+  h6 {
+    width: 80%;
+    text-align: justify;
+    margin-top: 20px;
+    @include paraTypography(0.8rem);
+    color: #fff;
+  }
+  @include media("<=tablet") {
+    grid-template-columns: 50% 50%;
+  }
+  @include media("<=570px") {
+    grid-template-columns: 100%;
+    padding-left: 40px;
+  }
+}
+.option__columns {
+  display: grid;
+  grid-template-columns: 40% 40% 10%;
+  padding-top: 20px;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      @include paraTypography(1rem);
+      color: #fff;
+    }
+  }
+  @include media("<=tablet") {
+  }
+}
+.last__para {
+  text-align: center;
+  color: #fff;
+  @include placeitCenter;
+  @include paraTypography(0.7rem);
+  width: 200px;
+  span {
+    color: $yellowishColor;
+  }
+}

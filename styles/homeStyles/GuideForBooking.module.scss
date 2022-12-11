@@ -1,0 +1,82 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+
+.guide__wrapper {
+  margin-top: 40px;
+  @include container;
+  h1 {
+    @include headingTypography(1.4rem);
+    font-weight: 400;
+    text-align: center;
+  }
+}
+.guide__container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-height: 300px;
+  padding: 30px 10px;
+  @include media("<=570px") {
+    flex-direction: column;
+  }
+}
+.phone__wrapper {
+  flex: 0.5;
+  display: flex;
+
+  justify-content: right;
+  @include media("<=570px") {
+    justify-content: center;
+  }
+  > div {
+    width: 300px;
+    height: 500px;
+    background: url("/images/phoneScreen.jpg");
+    @include backgroundImageProps;
+    margin-right: 30px;
+  }
+  img {
+    margin-right: 40px;
+  }
+}
+.guidelines__container {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  div {
+    display: flex;
+    align-items: center;
+    flex: 0.1;
+    p {
+      @include paraTypography(0.9rem);
+      font-weight: 500;
+      color: #232426;
+      span {
+        color: $darkBlueColor;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+  svg {
+    margin-right: 20px;
+    height: 17px;
+    color: $yellowishColor;
+    background-color: transparent;
+    border: 2px solid lightgray;
+    margin-top: 3px;
+    border-radius: 50%;
+    padding: 9px;
+  }
+  button {
+    @include buttonProps;
+    border-color: $darkBlueColor;
+    background-color: $darkBlueColor;
+    color: #fff;
+    margin-top: 20px;
+  }
+}

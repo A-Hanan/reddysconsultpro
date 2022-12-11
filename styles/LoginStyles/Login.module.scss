@@ -1,0 +1,123 @@
+@import "../mixin";
+@import "../var";
+
+.login__page__wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000099;
+  top: 0;
+  left: 0;
+  @include flexColumnAndCenter;
+}
+.login__form {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px 20px;
+  width: 340px;
+  height: max-content;
+  background-color: white;
+  border-radius: 4px;
+  > h1 {
+    @include headingTypography(1.5rem);
+    font-weight: 700;
+    color: $grayishBlack;
+    text-align: center;
+    > span {
+      color: $yellowishColor;
+      font-weight: 700;
+
+      > span {
+        color: $darkBlueColor;
+        margin-left: 4px;
+      }
+    }
+  }
+  > div {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    @include placeitCenter;
+
+    > p {
+      @include paraTypography(0.8rem);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    > div {
+      display: flex;
+      gap: 5px;
+      > input {
+        width: 50%;
+      }
+    }
+    input {
+      @include paraTypography(0.8rem);
+      font-weight: 500;
+      padding: 10px;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      &:focus {
+        outline: none !important;
+        border: 1px solid lightgray;
+      }
+    }
+
+    > button {
+      margin: 20px 0;
+      @include buttonProps;
+      width: 100%;
+      background-color: $logosBackgroundColor;
+      color: white;
+      &:hover {
+        background-color: $darkBlueColor;
+      }
+    }
+  }
+}
+.radio__options__usertype {
+  display: flex;
+  flex-direction: column;
+  > h1 {
+    @include headingTypography(1rem);
+    margin-bottom: 6px;
+  }
+  > div {
+    display: flex;
+    gap: 30px;
+    > div {
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      > p {
+        @include paraTypography(0.9rem);
+      }
+    }
+  }
+}
+.error__para {
+  @include paraTypography(0.7rem);
+  font-size: 0.7rem;
+  font-weight: 400 !important;
+  color: red !important;
+  margin-top: -7px;
+  margin-bottom: 6px;
+}
+.show__password__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 10px;
+  input {
+    width: max-content !important;
+  }
+  p {
+    @include paraTypography(0.75rem);
+    font-weight: 600;
+  }
+}

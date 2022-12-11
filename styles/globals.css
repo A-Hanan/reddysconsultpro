@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home__page {
+  padding-top: 70px;
+}
+
+.Carousel__Container-sc-hyhecw-0.fPimMH {
+  width: 100% !important;
+}
+
+/**********/
+.all__experts__page {
+  padding-top: 70px;
+}
+
+.all__experts__page > .wrapper {
+  display: flex;
+  margin-top: 2px;
+}
+
+/************** book appointment page **********************/
+/******* reviews ***********/
+.reviews__container {
+  width: 70vw;
+}
+
+/*************** reviews***************************/
+.reviews {
+  width: 100%;
+}
+
+.reviews .comment__box {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 50%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews .heading {
+  /* border-bottom: 1px solid lightgray; */
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 5px 20px;
+  width: 90%;
+  /* margin: 0 5%; */
+  height: 40px;
+  font-family: var(--heading-font);
+  color: black;
+}
+
+.comments {
+  /* overflow-y: scroll; */
+  height: 40vh;
+  padding: 15px;
+  width: 100%;
+  margin: 0 0%;
+}
+
+.reviews .comment {
+  background-color: rgba(235, 235, 235, 0.767);
+  margin: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.reviews .comment__writer {
+  font-size: 19px;
+  text-align: left;
+  margin: 0;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.reviews .comment__text {
+  text-align: left !important;
+  font-size: 17px !important;
+  display: none;
+  margin: 0 !important;
+  padding: 2px 5px !important;
+  margin-left: 10px;
+  color: black !important;
+}
+
+.reviews .comment.active .comment__text {
+  display: block;
+}
+
+.reviews .review {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+.reviews .review > h4 {
+  color: black;
+  padding: 5px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.reviews .review > p {
+  color: black;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.reviews .review > span {
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+  color: black;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+/********* ongoin appoinr*************/
+:root {
+  --color1: whitesmoke;
+}
+
+/*********** attended appointment**************/
+/* .attended__appointment {
+  padding: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  gap: 10px;
+}
+.attended__appointments > .heading {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+}
+.attended__appointment .lawyer__info {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+}
+.attended__appointment .lawyer__info h3 {
+  font-size: 1.1rem;
+}
+.attended__appointment .lawyer__info img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+.attended__appointment .appointment__info {
+  flex: 0.3;
+  padding: 10px;
+}
+.attended__appointment .appointment__info > h6 {
+  font-size: 0.9rem;
+}
+.attended__appointment .appointment__info > span {
+  font-size: 1.1rem;
+  font-weight: bolder;
+  width: 100px;
+  color: gray;
+}
+.attended__appointment .review__box {
+  display: flex;
+  flex: 0.4;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+.attended__appointment .review__box h1 {
+  font-size: 1.1rem;
+}
+.attended__appointment .review__box .MuiSvgIcon-root {
+  color: gold !important;
+}
+.attended__appointment .rating__btn {
+  padding: 8px 8px;
+  background-color: var(--light-blue);
+  color: white;
+  border: none;
+  border-radius: 5%;
+}
+.attended__appointment .rating__btn:hover {
+  color: var(--dark-blue);
+  background-color: white;
+  border: 2px solid var(--dark-blue);
+} */
+/***** rating and review********/
+.rating__and__review__modal {
+  position: fixed;
+  top: 7vh;
+  left: -1vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10000;
+  padding-top: 10vh;
+}
+
+.rating__and__review__wrapper {
+  height: 500px;
+  width: 30vw;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* border-top: 15px solid var(--colorthree); */
+  border-radius: 10px;
+}
+
+.skip__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.rating__stars > p {
+  width: 300px !important;
+  margin-top: 10px;
+}
+
+.rating__wrapper {
+  flex: 4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.rating__wrapper > h1 {
+  font-size: 1.1rem;
+  margin-bottom: 3vh;
+}
+
+.rating__wrapper > h1 > span {
+  color: var(--dark-blue);
+}
+
+.rating__wrapper > .rating__stars > span > .MuiSvgIcon-root {
+  color: rgba(0, 0, 0, 0.5) !important;
+  cursor: pointer;
+}
+
+.rating__wrapper > .rating__stars > span.shine > .MuiSvgIcon-root {
+  color: goldenrod !important;
+}
+
+.review__wrapper {
+  flex: 6;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+  padding-top: 5vh;
+}
+
+.review__wrapper > h1 {
+  font-size: 1.1rem;
+  padding-bottom: 3vh;
+}
+
+.review__wrapper > input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.review__wrapper > input:focus {
+  outline: none;
+}
+
+.review__wrapper > button {
+  margin-top: 15px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/****************** pending appointments *****************//*# sourceMappingURL=globals.css.map */

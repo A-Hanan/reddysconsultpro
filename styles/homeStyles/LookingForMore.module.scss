@@ -1,0 +1,98 @@
+@import "../mixin";
+@import "../var";
+@import "../breakpoints.scss";
+.looking__for__more__wrapper {
+  width: 100%;
+  height: max-content;
+  background-color: #fff;
+  // border: 2px solid black;
+  margin-bottom: 0px;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 5%;
+  justify-content: center;
+  padding: 50px 20%;
+  @include media("<=phone") {
+  }
+  @include media(">phone", "<=tablet", "retina2x") {
+    padding: 30px 8%;
+    grid-template-columns: 46% 46%;
+  }
+  @include media(">tablet", "<=desktop") {
+    padding: 30px 10%;
+  }
+  @include media("<=570px") {
+    padding: 30px 10%;
+    grid-template-columns: 80%;
+    gap: 12%;
+    margin-bottom: 70px;
+  }
+  @include media("<=phone") {
+    padding: 30px 5%;
+    grid-template-columns: 90%;
+    gap: 12%;
+    margin-bottom: 70px;
+  }
+  > div {
+    > h1 {
+      @include headingTypography(1.5rem);
+      font-weight: 500;
+      margin-bottom: 20px;
+      > svg {
+        color: $yellowishColor;
+        margin-right: 10px;
+      }
+    }
+    > p {
+      font-weight: 300;
+      @include paraTypography(0.875rem);
+    }
+  }
+}
+
+.contact__us__form {
+  @include flexColumnAndCenter;
+  align-items: flex-start;
+  gap: 15px;
+  > div {
+    @include flexColumnAndCenter;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    overflow: hidden;
+    > label {
+      @include paraTypography(0.875rem);
+      font-weight: 600;
+    }
+    > input {
+      @include textInputFieldProps;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    > textarea {
+      @include textInputFieldProps;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  > button {
+    @include buttonProps;
+    border-color: $yellowishColor;
+    color: $yellowishColor;
+    &:hover {
+      background-color: $yellowishColor;
+      color: white;
+    }
+    &:active {
+      color: $yellowishColor;
+      background-color: white;
+    }
+  }
+}
+.error__para {
+  @include paraTypography(0.75rem);
+  font-weight: 500;
+  color: red;
+}

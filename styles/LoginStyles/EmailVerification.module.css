@@ -1,0 +1,88 @@
+/**
+*
+* Testing
+*
+**/
+.verifyYourAccountWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.verifyYourAccountWrapper > div {
+  background-color: white;
+  width: 40vw;
+  max-width: 420px;
+  min-width: 280px;
+  min-height: 300px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.verifyYourAccountWrapper > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.verifyYourAccountWrapper > div > div p {
+  color: #46484b;
+  font-size: 0.9rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-weight: 300;
+}
+.verifyYourAccountWrapper > div > div input {
+  border: none;
+  background-color: whitesmoke;
+  font-size: 0.9rem;
+  padding: 9px 5px;
+  border-radius: 4px;
+}
+.verifyYourAccountWrapper > div > div button {
+  margin-top: 0px;
+}
+.verifyYourAccountWrapper > div > h1 {
+  font-size: 1.3rem;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: #3c3c3c;
+}
+.verifyYourAccountWrapper > div > span {
+  border: 2px solid #ff9e15;
+  padding: 15px;
+  border-radius: 50%;
+}
+.verifyYourAccountWrapper > div > span > svg {
+  width: 50px;
+  height: 50px;
+  color: #333385;
+}
+.verifyYourAccountWrapper > div button {
+  margin: 20px 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #333385;
+  color: white;
+}
+.verifyYourAccountWrapper > div button:hover {
+  background-color: #006;
+}/*# sourceMappingURL=EmailVerification.module.css.map */
