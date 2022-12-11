@@ -21,6 +21,7 @@ const CompletedAppointments = () => {
       type: "SET_USER",
       user: User ? User : null,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const CompletedAppointments = () => {
       }
     };
     setAndRun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   useEffect(() => {
     let User = localStorage?.getItem("consult_pro_user")
@@ -43,6 +45,7 @@ const CompletedAppointments = () => {
       type: "SET_USER",
       user: User ? User : null,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -53,8 +56,10 @@ const CompletedAppointments = () => {
             <h1 style={{ textAlign: "center" }} className={styles.heading}>
               Attended Appointments
             </h1>
-            {appointments.map((appointment) => (
-              <AttendedAppointment appointment={appointment} user={user} />
+            {appointments.map((appointment, i) => (
+              <div key={i}>
+                <AttendedAppointment appointment={appointment} user={user} />
+              </div>
               // <h1>Appoint</h1>
             ))}
           </>

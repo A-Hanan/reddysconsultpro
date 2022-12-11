@@ -91,11 +91,13 @@ const BookApptimeSlots = ({ expert }) => {
   ]);
   useEffect(() => {
     console.log("date", date);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 
   useEffect(() => {
     console.log("expert", expert);
     console.log("user", user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, expert]);
   useEffect(() => {
     // console.log("date>", date);
@@ -218,9 +220,11 @@ const BookApptimeSlots = ({ expert }) => {
       });
       setDisabledSlots(temp);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
   useEffect(() => {
     console.log("disabled slots", disabledSlots);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [disabledSlots]);
 
   const selectSlot = (e) => {
@@ -240,6 +244,7 @@ const BookApptimeSlots = ({ expert }) => {
         <div className={styles.time__slots}>
           {slots.map((slot, i) => (
             <input
+              key={i}
               className={
                 disabledSlots[i] == slot
                   ? `${styles.slot} ${styles.disabled}`

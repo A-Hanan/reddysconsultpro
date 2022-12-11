@@ -69,6 +69,7 @@ const BookAppointment3 = () => {
         }
       })
       .catch((err) => console.log(err.message));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router?.isReady]);
 
   return (
@@ -130,7 +131,12 @@ const BookAppointment3 = () => {
             <h1>
               {expert?.name}{" "}
               <span>
-                <Image src="/images/linkedInLogo.png" width={20} height={20} />
+                <Image
+                  src="/images/linkedInLogo.png"
+                  alt="linkedinlogo"
+                  width={20}
+                  height={20}
+                />
               </span>
             </h1>
           </div>

@@ -4,7 +4,7 @@ import ExpertsCategoriesBar from "../components/allExperts/ExpertsCategoriesBar"
 import ExpertsContainer from "../components/allExperts/ExpertsContainer";
 import ApplicationLayout from "../components/ApplicationLayout";
 
-const experts = () => {
+const Experts = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   return (
     <ApplicationLayout>
@@ -13,4 +13,4 @@ const experts = () => {
   );
 };
 
-export default experts;
+export default Experts;

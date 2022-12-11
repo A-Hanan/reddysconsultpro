@@ -10,7 +10,7 @@ import Footer from "../components/home/Footer";
 import Testimonial from "../components/home/Testimonial";
 import { useStateValue } from "../StateProvider";
 import { useRouter } from "next/router";
-const home = () => {
+const Home = () => {
   const router = useRouter();
   const [{ activeCategory, user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -18,6 +18,7 @@ const home = () => {
       type: "SET_SEARCH_EXPERT_TEXT",
       searchExpertText: "",
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     let User = localStorage?.getItem("consult_pro_user")
@@ -30,6 +31,7 @@ const home = () => {
     if (User?.userType == "expert") {
       router.push("/upcoming-appointments");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
@@ -48,4 +50,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

@@ -12,14 +12,14 @@ const Reviews = ({ reviews }) => {
 
         <div className="comments">
           {reviews?.length > 0 ? (
-            reviews.map((review) => (
-              <div className="review">
+            reviews.map((review, i) => (
+              <div className="review" key={i}>
                 <h4>{review?.review}</h4>
                 <h4>
                   {Array(parseInt(review?.rating))
                     .fill()
                     .map((_, i) => (
-                      <span>
+                      <span key={i}>
                         {" "}
                         <StarIcon />
                       </span>

@@ -5,6 +5,7 @@ import RatingAndReview from "./RatingAndReview";
 import api from "../../utils/api";
 import { useRouter } from "next/router";
 import styles from "../../styles/allExpertsStyles/CompletedAppointments.module.css";
+import Image from "next/image";
 const AttendedAppointment = ({ appointment, user }) => {
   //   const navigate = useNavigate();
   const router = useRouter();
@@ -23,12 +24,13 @@ const AttendedAppointment = ({ appointment, user }) => {
         })
         .catch((err) => alert(err.message));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className={styles.attended__appointment}>
       <div className={styles.row__one}>
         <div className={styles.lawyer__info}>
-          <img
+          <Image
             src={
               user.userType == "expert"
                 ? appointment.expert.profile
@@ -38,6 +40,9 @@ const AttendedAppointment = ({ appointment, user }) => {
                 ? appointment.user.profile
                 : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
             }
+            width={40}
+            height={40}
+            alt="profile"
           />
           <h3>
             {user.userType == "user"
@@ -83,7 +88,7 @@ const AttendedAppointment = ({ appointment, user }) => {
                       {Array(rating)
                         .fill()
                         .map((_, i) => (
-                          <span>
+                          <span key={i}>
                             <StarIcon />
                           </span>
                         ))}

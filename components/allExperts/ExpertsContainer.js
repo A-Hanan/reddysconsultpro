@@ -31,6 +31,7 @@ const ExpertsContainer = () => {
         // setExpertsShown(res.data);
       })
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     console.log("runnig use effect", searchExpertText);
@@ -57,6 +58,7 @@ const ExpertsContainer = () => {
       });
     }
     setExpertsShown(array);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCategory, allExperts, searchExpertText]);
 
   return (
@@ -83,7 +85,9 @@ const ExpertsContainer = () => {
       </h3>
       <div className={styles.all__experts__wrapper}>
         {expertsShown?.length > 0 ? (
-          expertsShown?.map((expert) => <ExpertBox expert={expert} />)
+          expertsShown?.map((expert, i) => (
+            <ExpertBox expert={expert} key={i} />
+          ))
         ) : (
           <h1>No Experts Found.</h1>
         )}

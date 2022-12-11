@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCameraWeb } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/allExpertsStyles/OngoingAppointment.module.css";
+import Image from "next/image";
 
 const OngoingAppointmentContainer = ({ appointment }) => {
   const [{ user }, dispatch] = useStateValue();
@@ -13,7 +14,7 @@ const OngoingAppointmentContainer = ({ appointment }) => {
     <>
       <div className={styles.ongoing__appointment__container}>
         <div className={styles.user__info}>
-          <img
+          <Image
             className={styles.user__profile__img}
             src={
               user.userType === "user"
@@ -22,6 +23,9 @@ const OngoingAppointmentContainer = ({ appointment }) => {
                 ? appointment.expert.profile
                 : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
             }
+            width={20}
+            height={20}
+            alt='profile'
           />
           <h1>{user.userType === "expert" ? "Client" : "Expert"}</h1>
           <div className={styles.user__name}>

@@ -17,6 +17,7 @@ const Navbar = () => {
   const [showNavigator, setShowNavigator] = useState(false);
   useEffect(() => {
     console.log("user", user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   useEffect(() => {
     console.log("router path", router);
@@ -29,6 +30,7 @@ const Navbar = () => {
     } else {
       setShowNavigator(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.pathname, activeCategory]);
 
   return (

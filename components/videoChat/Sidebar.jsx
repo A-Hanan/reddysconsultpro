@@ -65,6 +65,7 @@ const Sidebar = ({
       setIdToCall(receiverId);
     };
     setAndRun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiverId, receiverName]);
   // useEffect(() => {
   //   // console.log("appointment id at sidebar: ", appointmentId);
@@ -127,6 +128,7 @@ const Sidebar = ({
       }
     };
     setAndRun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [callEnded]);
 
   return (

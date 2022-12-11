@@ -6,6 +6,7 @@ import { getOngoingAppointment } from "../Actions/appointmentActions";
 import { useStateValue } from "../StateProvider";
 // import { useDispatch, useSelector } from "react-redux";
 import OngoingAppointmentContainer from "../components/allExperts/OngoingAppointmentContainer";
+import Image from 'next/image'
 
 const OngoingAppointment = () => {
   const [{ user }, dispatch] = useStateValue();
@@ -20,6 +21,7 @@ const OngoingAppointment = () => {
       type: "SET_USER",
       user: User ? User : null,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const OngoingAppointment = () => {
       }
     };
     getAndSet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   return (
     <ApplicationLayout>

@@ -25,6 +25,7 @@ const VideoCall = () => {
       user: User ? User : null,
     });
     addUser(User?.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //   const userstate = useSelector((state) => state.loginUserReducer);
@@ -41,6 +42,7 @@ const VideoCall = () => {
     if (router?.isReady) {
       setAppointmentId(router.query?.appointmentId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   useEffect(() => {
@@ -63,15 +65,18 @@ const VideoCall = () => {
           //   .then((res) => setReceiver(res.data[0]))
           //   .catch((error) => console.error(error));
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appointmentId]);
 
   useEffect(() => {
     //adding socket user
     console.log("me>>>>>>>>>>> ", me);
     addUser(user?.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   useEffect(() => {
     console.log(receiver?.name, receiverId, receiver?.userType);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiver]);
 
   return (
@@ -79,7 +84,7 @@ const VideoCall = () => {
       {/* <div className="video__call__navbar">
         <h3>Discuss your health face to face .</h3>
       </div> */}
-      <VideoPlayer user={user} appointment={appointment}/>
+      <VideoPlayer user={user} appointment={appointment} />
       <Sidebar
         receiverId={receiverId}
         receiverName={receiver?.name}

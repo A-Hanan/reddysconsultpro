@@ -9,6 +9,7 @@ import { useStateValue } from "../../StateProvider";
 // import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import styles from "../../styles/allExpertsStyles/CompletedAppointments.module.css";
+import Image from 'next/image'
 
 const PendingAppointment = ({ appointment }) => {
   const [showPurchaseModel, setShowPurchaseModel] = useState(false);
@@ -79,12 +80,15 @@ const PendingAppointment = ({ appointment }) => {
       >
         <div className={styles.row__one}>
           <div className={styles.lawyer__info}>
-            <img
+            <Image
               src={
                 appointment.expert.profile
                   ? appointment.expert.profile
                   : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
               }
+              width={20}
+              height={20}
+              alt='profile'
             />
             <h3>{appointment.expert.name}</h3>
           </div>

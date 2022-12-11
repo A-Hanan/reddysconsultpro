@@ -16,6 +16,7 @@ const PendingAppointments = () => {
       type: "SET_USER",
       user: User ? User : null,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     const setAndRun = async () => {
@@ -28,6 +29,7 @@ const PendingAppointments = () => {
       }
     };
     setAndRun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   return (
     <ApplicationLayout>
@@ -37,8 +39,10 @@ const PendingAppointments = () => {
             <h1 style={{ textAlign: "center" }} className="heading">
               Pending Appointments
             </h1>
-            {appointments.map((appointment) => (
-              <PendingAppointment appointment={appointment} />
+            {appointments.map((appointment, i) => (
+              <div key={i}>
+                <PendingAppointment appointment={appointment} />
+              </div>
             ))}
           </>
         ) : (

@@ -15,6 +15,7 @@ import { cancelAppointment } from "../Actions/appointmentActions2";
 import api from "../utils/api";
 import { useRouter } from "next/router";
 import { useStateValue } from "../StateProvider";
+import Image from "next/image";
 
 const UpcomingAppointments = () => {
   // const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const UpcomingAppointments = () => {
       type: "SET_USER",
       user: User ? User : null,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // const userstate = useSelector((state) => state.loginUserReducer);
@@ -55,6 +57,7 @@ const UpcomingAppointments = () => {
       }
     }
     getAndPerform();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   function dateDifference(date2, date1) {
     const _MS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -83,6 +86,7 @@ const UpcomingAppointments = () => {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <ApplicationLayout>
       <div className={styles.upcoming__appointments__container}>
@@ -92,8 +96,8 @@ const UpcomingAppointments = () => {
             <h1 style={{ textAlign: "center" }} className={styles.heading}>
               Upcoming Appointments
             </h1>
-            {appointments.map((appointment) => (
-              <div className={styles.upcoming__appointment}>
+            {appointments.map((appointment, i) => (
+              <div className={styles.upcoming__appointment} key={i}>
                 <p className={styles.remaining__time}>
                   {dateDifference(
                     new Date(appointment?.appointmentDate),
@@ -104,12 +108,15 @@ const UpcomingAppointments = () => {
 
                 <div className={styles.row__one}>
                   <div className={styles.expert__info}>
-                    <img
+                    <Image
                       src={
                         appointment.expert.profile
                           ? appointment.expert.profile
                           : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
                       }
+                      width={40}
+                      height={40}
+                      alt="profile"
                     />
                     <h3>
                       {user?.userType == "user"

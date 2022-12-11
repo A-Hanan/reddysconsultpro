@@ -57,7 +57,12 @@ const ExpertBox = ({ expert }) => {
         )}
       </div>
       <span>
-        <Image src="/images/linkedInLogo.png" width={20} height={20} />
+        <Image
+          alt="image"
+          src="/images/linkedInLogo.png"
+          width={20}
+          height={20}
+        />
       </span>
       <h1>{expert?.name}</h1>
       <div className={styles?.rating__container}>
@@ -70,7 +75,7 @@ const ExpertBox = ({ expert }) => {
             {Array(parseInt(rating))
               .fill()
               .map((_, i) => (
-                <span>
+                <span key={i}>
                   <StarIcon />
                 </span>
               ))}
