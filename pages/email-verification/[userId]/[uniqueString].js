@@ -25,8 +25,8 @@ const VerifyEmail = () => {
   useEffect(() => {
     setTimeout(() => {
       showLoading(false);
-    }, 1000);
-  }, [loading]);
+    }, 5000);
+  }, []);
   useEffect(() => {
     // console.log("current location>>>", window.location.pathname);
     // setPath(window.location.pathname);
@@ -67,73 +67,80 @@ const VerifyEmail = () => {
 
   return (
     <>
-      {/* {loading && <Loading />} */}
-      <div className={styles.verifyYourAccountWrapper}>
-        {/* <div>VerifyEmail</div>
+      {!loading && (
+        <>
+          {/* {loading && <Loading />} */}
+          <div className={styles.verifyYourAccountWrapper}>
+            {/* <div>VerifyEmail</div>
       <h1>{uniqueString}</h1> */}
-        {isAlreadyVerified ? (
-          <div>
-            <h1>
-              {" "}
-              Your email is already <span>verified</span>
-            </h1>
-
-            {/* <CheckCircleIcon /> */}
-            <span>
-              <FontAwesomeIcon icon={faCheck} />
-            </span>
-            <button onClick={() => router.push("/login")}>Login</button>
-          </div>
-        ) : (
-          <div
-          // className={
-          //   success
-          //     ? "email__verified__success__container"
-          //     : "email__verified__failure__container"
-          // }
-          >
-            {success ? (
-              <h1>
-                {" "}
-                Your email has been verified <span>successfully</span>
-              </h1>
-            ) : (
-              <h1>
-                <span>
+            {isAlreadyVerified ? (
+              <div>
+                <h1>
                   {" "}
-                  Your email has not been verified due to some unknown error
-                </span>
-              </h1>
-            )}
+                  Your email is already <span>verified</span>
+                </h1>
 
-            {success ? (
-              <>
+                {/* <CheckCircleIcon /> */}
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <button
-                  className="form-submit"
-                  onClick={() => router.push("/login")}
-                >
-                  Login
-                </button>
-              </>
+                <button onClick={() => router.push("/login")}>Login</button>
+              </div>
             ) : (
-              // <CancelIcon />
-              // <h1>Cancel</h1>
-              <span style={{ borderColor: "gray" }}>
-                <FontAwesomeIcon icon={faXmark} style={{ color: "#cc0000" }} />
-              </span>
-            )}
-            {/* {success && (
+              <div
+              // className={
+              //   success
+              //     ? "email__verified__success__container"
+              //     : "email__verified__failure__container"
+              // }
+              >
+                {success ? (
+                  <h1>
+                    {" "}
+                    Your email has been verified <span>successfully</span>
+                  </h1>
+                ) : (
+                  <h1>
+                    <span>
+                      {" "}
+                      Your email has not been verified due to some unknown error
+                    </span>
+                  </h1>
+                )}
+
+                {success ? (
+                  <>
+                    <span>
+                      <FontAwesomeIcon icon={faCheck} />
+                    </span>
+                    <button
+                      className="form-submit"
+                      onClick={() => router.push("/login")}
+                    >
+                      Login
+                    </button>
+                  </>
+                ) : (
+                  // <CancelIcon />
+                  // <h1>Cancel</h1>
+                  <span style={{ borderColor: "gray" }}>
+                    <FontAwesomeIcon
+                      icon={faXmark}
+                      style={{ color: "#cc0000" }}
+                    />
+                  </span>
+                )}
+                {/* {success && (
               <Link to="/">
                 {" "}
                 <button>Continue </button>
               </Link>
             )} */}
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
     </>
   );
 };
