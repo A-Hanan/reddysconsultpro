@@ -22,7 +22,7 @@ import Image from "next/image";
 
 const BookAppointment3 = () => {
   const router = useRouter();
-  const expertId = router?.query?.expertId;
+
   const [expert, setExpert] = useState({});
   const [{ user, activeCategory }, dispatch] = useStateValue();
 
@@ -32,6 +32,7 @@ const BookAppointment3 = () => {
   const [satisfactionRate, setSatisfactionRate] = useState(0);
 
   useEffect(() => {
+    const expertId = router?.query?.expertId;
     // console.log("router query", router.query);
     // console.log("expertId", expertId);
     if (router?.isReady) {
