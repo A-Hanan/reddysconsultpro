@@ -5,6 +5,8 @@ export const initialState = {
   activeCategory: "All",
   searchExpertText: "",
   mobileViewShowDashboard: false,
+  isSomeOneCallingForMeeting: false,
+  callIsAnsweredOutsideVideoPage: false,
 };
 
 //Selector
@@ -47,6 +49,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+    case "SET_SOMEONE_CALLING_FOR_MEETING":
+      return {
+        ...state,
+        isSomeOneCallingForMeeting: action.isSomeOneCallingForMeeting,
+      };
+    case "SET_CALL_ANSWERED_OUTSIDE_VIDEO_PAGE":
+      return {
+        ...state,
+        callIsAnsweredOutsideVideoPage: action.callIsAnsweredOutsideVideoPage,
       };
     case "SET_ACTIVE_CATEGORY":
       return {

@@ -95,10 +95,10 @@ const PendingAppointment = ({ appointment }) => {
               src={
                 appointment.expert.profile
                   ? appointment.expert.profile
-                  : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
+                  : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODZob7ROpqlx8WXwjueNwTOlC6Qum-yMiyfXiFRXkdhkHgybCpdvM1UpaXCL1ycfO8NI&usqp=CAU"
               }
-              width={20}
-              height={20}
+              width={60}
+              height={60}
               alt="profile"
             />
             <h3>{appointment.expert.name}</h3>

@@ -18,14 +18,14 @@ const OngoingAppointmentContainer = ({ appointment }) => {
             className={styles.user__profile__img}
             src={
               user.userType === "user"
-                ? "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
+                ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREAt16FjI60ZX7mbnNiMTSiGiWXelr3NFehw&usqp=CAU"
                 : appointment.expert.profile
                 ? appointment.expert.profile
-                : "https://www.unhcr.org/innovation/wp-content/uploads/2015/04/gellman.png"
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREAt16FjI60ZX7mbnNiMTSiGiWXelr3NFehw&usqp=CAU"
             }
-            width={20}
-            height={20}
-            alt='profile'
+            width={70}
+            height={70}
+            alt="profile"
           />
           <h1>{user.userType === "expert" ? "Client" : "Expert"}</h1>
           <div className={styles.user__name}>

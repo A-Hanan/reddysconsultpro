@@ -58,9 +58,19 @@ const ContextProvider = ({ children }) => {
 
     socket.on("me", (id) => setMe(id));
 
-    socket.on("callUser", ({ from, name: callerName, signal }) => {
-      setCall({ isReceivingCall: true, from, name: callerName, signal });
-    });
+    socket.on(
+      "callUser",
+      ({ from, name: callerName, signal, appointmentId, receiverId }) => {
+        setCall({
+          isReceivingCall: true,
+          from,
+          name: callerName,
+          signal,
+          appointmentId,
+          receiverId,
+        });
+      }
+    );
     socket.on("endCall", (res) => {
       // console.log("response of end call >>>> ", res);
       if (res === true) {
@@ -75,7 +85,7 @@ const ContextProvider = ({ children }) => {
   };
   const answerCall = (receiverId) => {
     setCallAccepted(true);
-    console.log("accepting answer call");
+    console.log("accepting answer call", receiverId);
 
     const peer = new Peer({ initiator: false, trickle: false, stream });
 
@@ -89,8 +99,13 @@ const ContextProvider = ({ children }) => {
     });
 
     peer.on("stream", (currentStream) => {
-      userVideo.current.srcObject = currentStream;
-      // console.log("current stream at peer stream", stream);
+      try {
+        userVideo.current.srcObject = currentStream;
+      } catch (err) {
+        console.log("error in peering user current stream");
+      }
+
+      console.log("current stream at peer stream", stream);
     });
 
     peer.signal(call.signal);
@@ -98,7 +113,7 @@ const ContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
 
-  const callUser = (id) => {
+  const callUser = (id, appointmentId, receiverId) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
     // console.log("id of receiver to be called>>>", id);
     try {
@@ -112,6 +127,8 @@ const ContextProvider = ({ children }) => {
           signalData: data,
           from: me,
           name,
+          appointmentId,
+          receiverId,
         });
       });
     } catch (err) {

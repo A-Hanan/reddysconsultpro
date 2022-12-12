@@ -13,8 +13,8 @@ import api from "../../utils/api";
 import styles from "../../styles/VideoChat/VideoChat.module.css";
 
 const VideoCall = () => {
-  const [{ user }, dispatch] = useStateValue();
-  const { addUser, me, callEnded, leaveCall, setMe } =
+  const [{ user, callIsAnsweredOutsideVideoPage }, dispatch] = useStateValue();
+  const { addUser, me, callEnded, leaveCall, setMe, answerCall } =
     useContext(SocketContext);
   useEffect(() => {
     let User = localStorage?.getItem("consult_pro_user")
@@ -79,6 +79,25 @@ const VideoCall = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiver]);
 
+  useEffect(() => {
+    console.log("superrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+    console.log(
+      "callIsAnsweredOutsideVideoPage",
+      callIsAnsweredOutsideVideoPage
+    );
+    console.log("receiverId", receiverId);
+    if (callIsAnsweredOutsideVideoPage && receiverId) {
+      answerCall(receiverId);
+      dispatch({
+        type: "SET_SOMEONE_CALLING_FOR_MEETING",
+        isSomeOneCallingForMeeting: false,
+      });
+      dispatch({
+        type: "SET_CALL_ANSWERED_OUTSIDE_VIDEO_PAGE",
+        callIsAnsweredOutsideVideoPage: false,
+      });
+    }
+  }, [callIsAnsweredOutsideVideoPage, receiverId]);
   return (
     <div className={styles.video__call__container}>
       {/* <div className="video__call__navbar">
@@ -92,7 +111,11 @@ const VideoCall = () => {
         appointmentId={appointmentId}
         user={user}
       ></Sidebar>
-      <Notifications receiverId={receiverId} user={user} />
+      <Notifications
+        receiverId={receiverId}
+        user={user}
+        appointmentId={appointmentId}
+      />
     </div>
   );
 };

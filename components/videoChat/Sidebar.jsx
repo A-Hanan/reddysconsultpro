@@ -163,7 +163,7 @@ const Sidebar = ({
               </button>
             ) : (
               <button
-                onClick={() => callUser(idToCall)}
+                onClick={() => callUser(idToCall,appointmentId,receiverId)}
                 className={styles.startCall__btn}
               >
                 {user?.userType !== "expert"

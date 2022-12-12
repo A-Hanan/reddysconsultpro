@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, isValidElement } from "react";
 import styles from "../../styles/homeStyles/Home.module.css";
 import Link from "next/link";
 import Login from "../../pages/login";
@@ -8,11 +8,20 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { logoutUser } from "../../Actions/userActions";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
+import Notifications from "../videoChat/Notifications";
 
 const Navbar = () => {
   const router = useRouter();
-  const [{ user, mobileViewShowDashboard, activeCategory }, dispatch] =
-    useStateValue();
+  const [
+    {
+      user,
+      mobileViewShowDashboard,
+      activeCategory,
+      isSomeOneCallingForMeeting,
+    },
+    dispatch,
+  ] = useStateValue();
+
   const [showAuthForm, setShowAuthForm] = useState(false);
   const [showNavigator, setShowNavigator] = useState(false);
   useEffect(() => {
@@ -33,9 +42,16 @@ const Navbar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.pathname, activeCategory]);
 
+  useEffect(() => {
+    if (isSomeOneCallingForMeeting) {
+      console.log("someone is calling");
+    }
+  }, [isSomeOneCallingForMeeting]);
+
   return (
     <>
       <div className={styles.nav__wrapper}>
+        <Notifications />
         <div>
           {showNavigator && (
             <span

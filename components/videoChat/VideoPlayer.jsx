@@ -43,9 +43,7 @@ const VideoPlayer = ({ user, appointment }) => {
           {/* <h5>{call.name || "Name"}</h5> */}
           <h5>
             {user?.userType == "expert"
-              ? appointment?.user?.firstName +
-                " " +
-                appointment?.user?.firstName
+              ? appointment?.user?.firstName + " " + appointment?.user?.lastName
               : appointment?.user?.name}
           </h5>
         </div>
