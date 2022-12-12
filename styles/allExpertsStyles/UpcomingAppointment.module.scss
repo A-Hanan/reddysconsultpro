@@ -79,11 +79,18 @@
   @include media("<=980px") {
     grid-template-columns: 50% 50%;
   }
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #778899;
+  }
   > div {
     > img {
       height: 60px;
       width: 60px;
       border-radius: 50%;
+      background-color: #778899;
     }
     > h3 {
       @include headingTypography(1.2rem);

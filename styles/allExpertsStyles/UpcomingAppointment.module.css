@@ -101,10 +101,17 @@
     grid-template-columns: 50% 50%;
   }
 }
+.row__one img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #778899;
+}
 .row__one > div > img {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  background-color: #778899;
 }
 .row__one > div > h3 {
   font-size: 1.2rem;
