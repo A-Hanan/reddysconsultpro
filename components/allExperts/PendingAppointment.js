@@ -25,11 +25,13 @@ const PendingAppointment = ({ appointment }) => {
     price: appointment.expert?.minFee,
     productBy: appointment.expert?.name,
   });
+
   const makePayment = (token) => {
     const body = {
       token,
       product,
     };
+
     api
       .post("/payment", body)
       .then((response) => {
