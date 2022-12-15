@@ -179,7 +179,7 @@
     font-weight: 600;
   }
   p {
-    @include headingTypography(0.875rem);
+    @include paraTypography(1rem);
     font-weight: 300;
   }
 }
