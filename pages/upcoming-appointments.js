@@ -1,25 +1,14 @@
 import ApplicationLayout from "../components/ApplicationLayout";
 import styles from "../styles/allExpertsStyles/UpcomingAppointment.module.css";
 import React, { useState, useEffect } from "react";
-
 import { getUpcomingAppointments } from "../Actions/appointmentActions";
 import { cancelAppointment } from "../Actions/appointmentActions2";
-
-// import EditIcon from "@mui/icons-material/Edit";
-// import DeleteIcon from "@mui/icons-material/Delete";
-// import ClearIcon from "@mui/icons-material/Clear";
-// import IconButton from "@mui/material/IconButton";
-// import { addCreateConvMembers } from "../../Actions/messengerActions";
-// import { useNavigate, Link } from "react-router-dom";
-// import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import api from "../utils/api";
 import { useRouter } from "next/router";
 import { useStateValue } from "../StateProvider";
 import Image from "next/image";
 
 const UpcomingAppointments = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const router = useRouter();
   const [appointments, setAppointments] = useState([]);
   const [{ user }, dispatch] = useStateValue();

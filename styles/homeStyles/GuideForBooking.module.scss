@@ -26,6 +26,7 @@
   display: flex;
 
   justify-content: right;
+  position: relative;
   @include media("<=570px") {
     justify-content: center;
   }
@@ -40,6 +41,40 @@
     margin-right: 40px;
   }
 }
+.phone__screen__content__box {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: #232426;
+  height: 73%;
+  top: 14%;
+  width: 205px;
+
+  right: 50px;
+  z-index: 1;
+  background: url("/images/phonescreenbg1.png");
+  @include backgroundImageProps;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transition: all 0.3s ease;
+}
+.phone__screen__content__box.two {
+  background: url("/images/phonescreenbg2.png");
+  @include backgroundImageProps;
+}
+.phone__screen__content__box.three {
+  background: url("/images/phonescreenbg3.png");
+  @include backgroundImageProps;
+}
+.phone__screen__content__box.four {
+  background: url("/images/phonescreenbg4.png");
+  @include backgroundImageProps;
+}
+.phone__screen__content__box.five {
+  background: url("/images/phonescreenbg5.png");
+  @include backgroundImageProps;
+}
+
 .guidelines__container {
   display: flex;
   flex: 0.5;

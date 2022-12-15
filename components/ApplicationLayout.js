@@ -20,11 +20,7 @@ export default function ApplicationLayout({ children }) {
     User && addUser(User?.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // useEffect(() => {
-  //   //adding socket user
-  //   console.log("me>>>>>>>>>>> ", me);
-  //   addUser(user?.id);
-  // }, [user]);
+
   return (
     <div>
       <Navbar />

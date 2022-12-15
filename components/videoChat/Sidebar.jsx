@@ -40,19 +40,6 @@ const Sidebar = ({
   const [idToCall, setIdToCall] = useState("");
   const router = useRouter();
 
-  // const userstate = useSelector((state) => state.loginUserReducer);
-  // const { currentUser } = userstate;
-  // const [{ user }, dispatch] = useStateValue();
-  // useEffect(() => {
-  //   let User = localStorage?.getItem("consult_pro_user")
-  //     ? JSON.parse(localStorage?.getItem("consult_pro_user"))
-  //     : null;
-  //   dispatch({
-  //     type: "SET_USER",
-  //     user: User ? User : null,
-  //   });
-  // }, []);
-
   useEffect(() => {
     const setAndRun = () => {
       console.log(receiverId, receiverName, " at sidebar");
@@ -163,7 +150,7 @@ const Sidebar = ({
               </button>
             ) : (
               <button
-                onClick={() => callUser(idToCall,appointmentId,receiverId)}
+                onClick={() => callUser(idToCall, appointmentId, receiverId)}
                 className={styles.startCall__btn}
               >
                 {user?.userType !== "expert"

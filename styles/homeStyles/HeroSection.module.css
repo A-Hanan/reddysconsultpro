@@ -26,6 +26,26 @@
     align-items: flex-start;
   }
 }
+.hero__container__wrapper button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46484b;
+  border: 1px solid lightgray;
+  padding: 9px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #ff9e15;
+  flex: 0.2;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+}
 
 .image__wrapper {
   margin-left: 50%;

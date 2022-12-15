@@ -1,12 +1,10 @@
 import ApplicationLayout from "../components/ApplicationLayout";
 import styles from "../styles/allExpertsStyles/OngoingAppointment.module.css";
 import React, { useState, useEffect } from "react";
-
 import { getOngoingAppointment } from "../Actions/appointmentActions";
 import { useStateValue } from "../StateProvider";
-// import { useDispatch, useSelector } from "react-redux";
 import OngoingAppointmentContainer from "../components/allExperts/OngoingAppointmentContainer";
-import Image from 'next/image'
+import Image from "next/image";
 
 const OngoingAppointment = () => {
   const [{ user }, dispatch] = useStateValue();

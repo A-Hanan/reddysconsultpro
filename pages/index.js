@@ -38,8 +38,9 @@ const Home = () => {
       <Navbar />
       <div className="home__page">
         <HeroContainer />
-        <Testimonial />
         <TrendingCategories />
+        <Testimonial />
+
         {/* <TopRatedExperts /> */}
 
         <GuideForBooking />

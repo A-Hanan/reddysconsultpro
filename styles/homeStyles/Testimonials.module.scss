@@ -1,18 +1,23 @@
 @import "../mixin";
 @import "../var";
 @import "../breakpoints.scss";
-.testimonials__part__wrapper {
+.testimonials__container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+
+  gap: 40px;
   @include container;
   margin-top: 40px;
+  background-color: $creamColor;
 
   h1 {
     margin-top: 30px;
-    @include headingTypography(1.5rem);
-    font-weight: 500;
+    @include headingTypography(2rem);
+    color: $secondaryColor;
+    font-weight: 600;
+    text-align: left;
     text-align: center;
   }
   button {
@@ -27,6 +32,9 @@
     flex-direction: column;
     gap: 2px;
   }
+}
+.testimonials__part__wrapper {
+  width: 70%;
 }
 
 .user__options__wrapper {
@@ -130,8 +138,38 @@
     padding: 0 20px;
   }
 }
+// .testimonial__box {
+//   padding: 30px 40px;
+//   position: relative;
+//   @include media("<=tablet") {
+//     width: 100%;
+//   }
+//   h1 {
+//     @include paraTypography(1rem);
+//     font-weight: 600;
+//   }
+//   p {
+//     @include paraTypography(0.875rem);
+//     font-weight: 300;
+//   }
+// }
+// .left__icon {
+//   position: absolute;
+//   left: 3px;
+//   top: 20px;
+//   svg {
+//     height: 30px;
+//     color: $logosBackgroundColor;
+//   }
+// }
+// .right__icon {
+//   position: absolute;
+//   right: 3px;
+// }
+
 .testimonial__box {
-  padding: 30px 40px;
+  padding: 30px 50px;
+  // max-width: 300px;
   position: relative;
   @include media("<=tablet") {
     width: 100%;
@@ -141,13 +179,13 @@
     font-weight: 600;
   }
   p {
-    @include paraTypography(0.875rem);
+    @include headingTypography(0.875rem);
     font-weight: 300;
   }
 }
 .left__icon {
   position: absolute;
-  left: 3px;
+  left: 13px;
   top: 20px;
   svg {
     height: 30px;

@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import "./BookAppTimeSlots.css";
-// import { useDispatch, useSelector } from "react-redux";
 import api from "../../utils/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { bookAppointmentAction } from "../../Actions/bookAppointmentAction";
 import { useStateValue } from "../../StateProvider";
 import { useRouter } from "next/router";
 import styles from "../../styles/allExpertsStyles/BookAppointment.module.css";
 import BookAppointmentModal from "./BookAppointmentModal";
-
-// import ReactTimeslotCalendar from "react-timeslot-calendar-k";
-// import moment from "moment";
-
-/*** timeout note */
-//var timeout = new Date().getTime() + 15*60*1000; //add 15 minutes;
 
 const ampmToMinutesConverter = (time) => {
   var input = time,

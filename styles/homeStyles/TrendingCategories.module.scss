@@ -77,16 +77,91 @@
   color: #fff !important;
   border: none !important;
 }
+// .tc__conatainer {
+//   @include container;
+//   background-color: whitesmoke;
+//   margin-top: 6px;
+
+//   h1 {
+//     margin-top: 30px;
+//     @include headingTypography(1.5rem);
+//     font-weight: 500;
+//     text-align: center;
+//   }
+//   button {
+//     @include buttonProps;
+//     @include placeitCenter;
+//     margin-top: 50px;
+//     &:hover {
+//       color: gray;
+//     }
+//   }
+// }
+// .categoriesGrid {
+//   // display: grid;
+//   // grid-template-columns: 18% 18% 18% 18%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   @include placeitCenter;
+//   width: 80vw;
+//   gap: 20px;
+//   justify-content: center;
+//   padding-top: 50px;
+//   @include media("<=922px") {
+//     width: 100vw;
+//   }
+//   @include media("<=phone") {
+//     flex-direction: column;
+//   }
+
+//   div {
+//     @include flexColumnAndCenter;
+//     justify-content: flex-start;
+//     flex: 0.18;
+//     @include media("<=922px") {
+//       flex: 0.22;
+//     }
+//     // width: 330px;
+//     gap: 10px;
+//     span {
+//       background-color: $logosBackgroundColor;
+//       width: 60px;
+//       height: 60px;
+//       @include flexColumnAndCenter;
+//       border-radius: 50%;
+//       svg {
+//         font-size: 1.5rem;
+//         color: #fff;
+//         padding: 10px;
+//       }
+//       &:hover {
+//         // background-color: $yellowishColor;
+//         cursor: pointer;
+//       }
+//     }
+//     p {
+//       text-align: center;
+//       @include paraTypography(0.97rem);
+//       color: $grayishBlack;
+//       font-weight: 500;
+//     }
+//   }
+// }
+
 .tc__conatainer {
   @include container;
-  background-color: whitesmoke;
-  margin-top: 6px;
+  background-color: white;
+  margin-top: 26px;
+  @include placeitCenter;
+  width: 80vw;
 
   h1 {
     margin-top: 30px;
-    @include headingTypography(1.5rem);
-    font-weight: 500;
-    text-align: center;
+    @include headingTypography(2rem);
+    color: $secondaryColor;
+    font-weight: 600;
+    text-align: left;
   }
   button {
     @include buttonProps;
@@ -98,53 +173,77 @@
   }
 }
 .categoriesGrid {
-  // display: grid;
-  // grid-template-columns: 18% 18% 18% 18%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  @include placeitCenter;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: left;
+  // @include placeitCenter;
   width: 80vw;
   gap: 20px;
-  justify-content: center;
+  justify-content: left;
   padding-top: 50px;
+
   @include media("<=922px") {
-    width: 100vw;
+    // width: 100vw;
+    grid-template-columns: 45% 45%;
+    justify-content: left;
   }
-  @include media("<=phone") {
+  @include media("<=500px") {
     flex-direction: column;
+    grid-template-columns: 90%;
   }
 
   div {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     @include flexColumnAndCenter;
-    justify-content: flex-start;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px;
+    padding-top: 20px;
+    // background-color: whitesmoke;
     flex: 0.18;
+    padding-bottom: 10px;
+    border-radius: 4px;
     @include media("<=922px") {
       flex: 0.22;
+    }
+    &:hover {
+      // background-color: $yellowishColor;
+      cursor: pointer;
+      box-shadow: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     }
     // width: 330px;
     gap: 10px;
     span {
-      background-color: $logosBackgroundColor;
-      width: 60px;
-      height: 60px;
+      // background-color: $logosBackgroundColor;
+      // width: 60px;
+      // height: 60px;
       @include flexColumnAndCenter;
       border-radius: 50%;
+      display: flex;
+      flex-direction: row;
+      p {
+        @include paraTypography(1rem);
+        font-weight: 400;
+      }
       svg {
-        font-size: 1.5rem;
-        color: #fff;
+        font-size: 1rem;
+        color: #ff9e15;
+        // color: $logosBackgroundColor;
         padding: 10px;
       }
-      &:hover {
-        // background-color: $yellowishColor;
-        cursor: pointer;
-      }
     }
-    p {
-      text-align: center;
-      @include paraTypography(0.97rem);
+    > p {
+      text-align: left;
+      @include headingTypography(1rem);
+      color: black;
       color: $grayishBlack;
       font-weight: 500;
+      padding-left: 10px;
     }
   }
 }

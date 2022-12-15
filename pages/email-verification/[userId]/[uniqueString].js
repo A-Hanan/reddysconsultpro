@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-
 import { useRouter } from "next/router";
-// import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-// import CancelIcon from "@mui/icons-material/Cancel";
-// import { Link, useNavigate } from "react-router-dom";
 import api from "../../../utils/api";
 import styles from "../../../styles/LoginStyles/EmailVerification.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-// import EmailIcon from "@mui/icons-material/Email";
-
 const VerifyEmail = () => {
-  //   const userstate = useSelector((state) => state.loginUserReducer);
-  //   const { currentUser } = userstate;
   const router = useRouter();
   const { userId, uniqueString } = router.query;
   const [path, setPath] = useState("");

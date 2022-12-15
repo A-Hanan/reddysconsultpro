@@ -1,18 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-// import "./RatingAndReview.css";
 import StarIcon from "@mui/icons-material/Star";
 import api from "../../utils/api";
-// import { useNavigate, useParams } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useStateValue } from "../../StateProvider";
 
 function RatingAndReview({ setShowRatingModal, appointment }) {
   const router = useRouter();
   const [{ user }, dispatch] = useStateValue();
-  // const userstate = useSelector((state) => state.loginUserReducer);
-  // const { currentUser } = userstate;
-  // const navigate = useNavigate();
   const [rating, setRating] = useState(1);
   const [professionalism, setProfessionalism] = useState(1);
   const [communication, setCommunication] = useState(1);

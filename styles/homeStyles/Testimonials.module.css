@@ -3,25 +3,29 @@
 * Testing
 *
 **/
-.testimonials__part__wrapper {
+.testimonials__container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 40px;
   width: 100%;
   padding: 20px;
   margin-top: 40px;
+  background-color: #fff3e2;
 }
-.testimonials__part__wrapper h1 {
+.testimonials__container h1 {
   margin-top: 30px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #000;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-weight: 500;
+  color: #46484b;
+  font-weight: 600;
+  text-align: left;
   text-align: center;
 }
-.testimonials__part__wrapper button {
+.testimonials__container button {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   color: #46484b;
@@ -39,14 +43,18 @@
   transform: translateX(-50%);
   margin-top: 50px;
 }
-.testimonials__part__wrapper button:hover {
+.testimonials__container button:hover {
   color: gray;
 }
 @media (max-width: 922px) {
-  .testimonials__part__wrapper {
+  .testimonials__container {
     flex-direction: column;
     gap: 2px;
   }
+}
+
+.testimonials__part__wrapper {
+  width: 70%;
 }
 
 .user__options__wrapper {
@@ -185,7 +193,7 @@
 }
 
 .testimonial__box {
-  padding: 30px 40px;
+  padding: 30px 50px;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -201,16 +209,16 @@
   font-weight: 600;
 }
 .testimonial__box p {
-  color: #46484b;
   font-size: 0.875rem;
+  color: #000;
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   font-weight: 300;
 }
 
 .left__icon {
   position: absolute;
-  left: 3px;
+  left: 13px;
   top: 20px;
 }
 .left__icon svg {

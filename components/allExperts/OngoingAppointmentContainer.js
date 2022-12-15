@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from "../../StateProvider";
-// import { Link } from "react-router-dom";
-// import VideocamIcon from "@mui/icons-material/Videocam";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCameraWeb } from "@fortawesome/free-solid-svg-icons";
@@ -66,62 +64,6 @@ const OngoingAppointmentContainer = ({ appointment }) => {
             <FontAwesomeIcon icon={faCameraWeb} />
             Join Meeting
           </div>
-          {/* <Link
-            className={styles.start__video__btn"
-            onClick={() => {
-              window.location.href = `/video-chat/${appointment._id}`;
-            }}
-            href="#"
-          > */}
-          {/* <CallIcon />
-          {user.userRole === "1" ? "Call the Doctor " : " Call the Patient"} */}
-          {/* <VideocamIcon /> */}
-          {/* Join
-          </Link> */}
-          {/* <button
-          className={styles.start__video__btn"
-          onClick={() => setShowVideoBox(true)}
-        >
-          <CallIcon />
-          {user.userRole === "1" ? "Call the Doctor " : " Call the Patient"}
-        </button> */}
-          {/* {callAccepted && !callEnded ? (
-          <button
-            className={styles.start__video__btn"
-            variant="contained"
-            color="secondary"
-            fullWidth
-            onClick={leaveCall}
-          >
-            Hang Up
-          </button>
-        ) : (
-          <button
-            className={styles.start__video__btn"
-            variant="contained"
-            color="primary"
-            fullWidth
-            onClick={() =>
-              callUser(user.userRole === "1" ? doctor?._id : patient?._id)
-            }
-          >
-            Call
-          </button> */}
-          {/* )} */}
-          {/* //<Notifications /> */}
-          {/* <Sidebar
-          personToCallId={user.userRole === "1" ? doctor?._id : patient?._id}
-        >
-          <Notifications />
-        </Sidebar>
-        {showVideoBox && (
-          // <div className={styles.video-chat-container">
-          // <div>
-          //   <CancelIcon onClick={() => setShowVideoBox(false)} />
-          <VideoPlayer />
-          // </div>
-          // </div>
-        )} */}
         </div>
       </div>
     </>

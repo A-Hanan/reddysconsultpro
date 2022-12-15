@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import "./ForgotPassword.css";
 import styles from "../../../styles/LoginStyles/EmailVerification.module.css";
 import api from "../../../utils/api";
 

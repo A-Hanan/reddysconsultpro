@@ -25,7 +25,7 @@ const TrendingCategories = () => {
   return (
     <>
       <div className={styles.tc__conatainer}>
-        <h1>Trending Categories</h1>
+        <h1>Browse Expert By Category</h1>
         <div className={styles.categoriesGrid}>
           <div
             onClick={() => {
@@ -37,7 +37,8 @@ const TrendingCategories = () => {
             }}
           >
             <span>
-              <FontAwesomeIcon icon={faPassport} />
+              <FontAwesomeIcon icon={faUserGroup} />
+              <p>33 Experts</p>
             </span>
             <p>O1 Visa and EB Green Card</p>
           </div>
@@ -52,6 +53,7 @@ const TrendingCategories = () => {
           >
             <span>
               <FontAwesomeIcon icon={faUserGroup} />
+              <p>20 Experts</p>
             </span>
             <p>Consulting</p>
           </div>
@@ -65,7 +67,7 @@ const TrendingCategories = () => {
             }}
           >
             <span>
-              <FontAwesomeIcon icon={faFileLines} />{" "}
+              <FontAwesomeIcon icon={faUserGroup} /> <p>40 Experts</p>
             </span>
             <p>Resumes and Interviews</p>
           </div>
@@ -81,14 +83,15 @@ const TrendingCategories = () => {
             }}
           >
             <span>
-              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faUserGroup} />
+              <p>50 Experts</p>
             </span>
             <p>Speciality Topics</p>
           </div>
         </div>
-        <button>
+        {/* <button>
           <Link href="/experts">Explore more...</Link>
-        </button>
+        </button> */}
       </div>
     </>
   );

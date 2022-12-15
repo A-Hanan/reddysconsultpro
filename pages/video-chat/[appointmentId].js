@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import Notifications from "../../components/videoChat/Notifications";
 import Sidebar from "../../components/videoChat/Sidebar";
 import VideoPlayer from "../../components/videoChat/VideoPlayer";
-// import { useParams } from "react-router-dom";
 import { useRouter } from "next/router";
 import { SocketContext } from "../../SocketContext";
-// import "./VideoChat.css";
 import { useStateValue } from "../../StateProvider";
 import api from "../../utils/api";
-// import { useDispatch, useSelector } from "react-redux";
 import styles from "../../styles/VideoChat/VideoChat.module.css";
 
 const VideoCall = () => {

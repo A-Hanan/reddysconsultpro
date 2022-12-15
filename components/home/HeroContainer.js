@@ -49,7 +49,15 @@ const HeroContainer = () => {
         <h1>
           Find and Book <span>best experts</span> of every field
         </h1>
-        <div className={styles.search__input__wrapper}>
+        <button>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            href="/experts"
+          >
+            Find Experts You Need{" "}
+          </Link>
+        </button>
+        {/* <div className={styles.search__input__wrapper}>
           <input
             placeholder="Search for experts in different fields by name or category"
             type="text"
@@ -71,7 +79,7 @@ const HeroContainer = () => {
               Search{" "}
             </Link>
           </button>
-        </div>
+        </div> */}
         <h3>{subheaderText}</h3>
       </div>
       <div className={styles.image__two}>

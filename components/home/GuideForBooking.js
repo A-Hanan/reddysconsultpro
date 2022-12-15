@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../styles/homeStyles/GuideForBooking.module.css";
 import Image from "next/image";
 // import PhoneScreen from "../../utils/images/PhoneScreen.jpg";
@@ -8,6 +8,17 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
 
 const GuideForBooking = () => {
+  const [screenBg, setScreenBg] = useState(1);
+  useEffect(() => {
+    setTimeout(() => {
+      if (screenBg == 5) {
+        setScreenBg(1);
+        return;
+      }
+      setScreenBg(screenBg + 1);
+    }, 4000);
+  }, [screenBg]);
+
   return (
     <div className={styles.guide__wrapper}>
       <h1>Book Appointment in 3 easy steps</h1>
@@ -20,6 +31,19 @@ const GuideForBooking = () => {
             height={400}
           /> */}
           <div></div>
+          <span
+            className={`${styles.phone__screen__content__box} ${
+              screenBg == 1
+                ? styles.one
+                : screenBg == 2
+                ? styles.two
+                : screenBg == 3
+                ? styles.three
+                : screenBg == 4
+                ? styles.four
+                : styles.five
+            }`}
+          ></span>
         </div>
         <div className={styles.guidelines__container}>
           <div>

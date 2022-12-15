@@ -1,13 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import "./BookAppointment3.css";
-
-// import TimePicker from "react-time-picker";
-// import {
-//   bookAppointmentAction,
-//   validateBookingValues,
-// } from "../../Actions/bookAppointmentAction";
-// import { useNavigate, useParams } from "react-router";
-// import { useDispatch, useSelector } from "react-redux";
 import api from "../../utils/api";
 import Swal from "sweetalert2";
 import StarIcon from "@mui/icons-material/Star";

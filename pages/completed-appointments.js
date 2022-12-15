@@ -3,14 +3,11 @@ import styles from "../styles/allExpertsStyles/CompletedAppointments.module.css"
 import React, { useState, useEffect } from "react";
 import AttendedAppointment from "../components/allExperts/AttendedAppointment";
 import { getAttendedAppointments } from "../Actions/appointmentActions";
-// import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useStateValue } from "../StateProvider";
 
 const CompletedAppointments = () => {
   const [appointments, setAppointments] = useState([]);
-  // const userstate = useSelector((state) => state.loginUserReducer);
-  // const { currentUser } = userstate;
   const router = useRouter();
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {

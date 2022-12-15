@@ -9,13 +9,6 @@ const VideoPlayer = ({ user, appointment }) => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } =
     useContext(SocketContext);
 
-  // console.log("name", name);
-  // console.log("callAccepted", callAccepted);
-  // console.log("myVideo", myVideo);
-  // console.log("userVideo", userVideo);
-  //console.log("callEnded", callEnded);
-  //console.log("stream>>>>>>>>>>>>>>>>>>>>>>>>", stream);
-  // console.log("call", call);
   useEffect(() => {
     // console.log("call.name , name >", call.name, name);
   }, [name, call]);
