@@ -67,43 +67,6 @@ const BookAppointment3 = () => {
   return (
     <ApplicationLayout>
       <div className={styles.book__appointment__container}>
-        {/* <div className="basic__info">
-          <div className="profile__pic">
-            <img
-              className="profile__pic"
-              src={
-                expert?.profile
-                  ? expert?.profile
-                  : "https://cdn1.iconfinder.com/data/icons/man-user-human-avatar-profile-business-person/100/03-1Advocate-512.png"
-              }
-            />
-          </div>
-
-          <div className="personal__info">
-            <div className="name__and__rating">
-              <h1 className="name">{expert?.name}</h1>
-              <div className="rating__container">
-                {rating == 0 ? (
-                  <p>(no rating given)</p>
-                ) : (
-                  <>
-                    {" "}
-                    {Array(parseInt(rating))
-                      .fill()
-                      .map((_, i) => (
-                        <span>
-                          <StarIcon />
-                        </span>
-                      ))}
-                    <span>({ratingCount})</span>
-                  </>
-                )}
-              </div>
-            </div>
-            <h6>Online video Consultation</h6>
-            <h6>Fee: {expert?.appointmentFee} RS</h6>
-          </div>
-        </div> */}
         <div className={styles.basic__expert__info}>
           <div>
             <div className={styles.image__box}>

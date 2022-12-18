@@ -15,27 +15,16 @@ export const bookAppointmentAction = async (bookAppointmentValues, router) => {
   await api
     .post("/appointment", bookAppointmentValues)
     .then(async (res) => {
-      console.log("res of booking appointment>", res);
       response = res;
       Swal.fire("Booked Successfully, Waiting for Payment!", "", "success");
-      // api
-      //   .post("/notifications", {
-      //     receiverId: bookAppointmentValues.lawyerId,
-      //     text: `${bookAppointmentValues.client.name} booked an apppointment with you. Status is pending`,
-      //   })
-      //   .then((res) => {
-      //     console.log("response from posting notifications", res.data);
-      //   })
-      //   .catch((err) => console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrr", err));
-      // send-pay-and-confirm-email
       if (bookAppointmentValues?.expert?.minFee > 0) {
         await api
-          .post("/auth/send-pay-and-confirm-email",{ appointment:res?.data})
+          .post("/auth/send-pay-and-confirm-email", { appointment: res?.data })
           .then((res) => {
             console.log("response from sendig payment mail");
           })
           .catch((err) => console.log(err));
-         router.push("/pending-appointments");
+        router.push("/pending-appointments");
       } else {
         router.push("/upcoming-appointments");
       }
@@ -53,7 +42,6 @@ export const bookAppointmentAction = async (bookAppointmentValues, router) => {
 };
 
 export const updateAppointmentAction = async (updateAppointmentValues) => {
-  //console.log("at action=>", bookAppointmentValues);
   let response;
   await api
     .put("/appointment/updateAppointmentDetails/", updateAppointmentValues)
@@ -82,12 +70,7 @@ export const validateBookingValues = async (
     clientId,
     lawyer,
   } = bookAppointmentValues;
-  // let errors = {
-  //   title: "",
-  //   description: "",
-  //   date: "",
-  //   time: "",
-  // };
+
   setErrors({
     title: "",
     description: "",
@@ -98,10 +81,7 @@ export const validateBookingValues = async (
   let appointmentMinutes =
     parseInt(appointmentTime.slice(0, 2)) * 60 +
     parseInt(appointmentTime.slice(3, 5));
-  // if (appointmentMinutes < 9 * 60 || appointmentMinutes > 18 * 60) {
-  //   handleSubmit("select time between 9 am to 6pm");
-  //   return;
-  // }
+
   /*********** check according to lawyer availability */
   let startAva = parseInt(lawyer.startAvailabilityHour.slice(0, 2));
   let endAva = parseInt(lawyer.endAvailabilityHour.slice(0, 2));
@@ -160,7 +140,7 @@ export const validateBookingValues = async (
     console.log("lawyer all appointments>", res.data);
     if (res.data[0]) {
       console.log("already booked appointments>>>", res.data);
-      let isLawyerFree = true;
+      let isExpertFree = true;
       res.data.forEach((appointment, i) => {
         let appointmentTimeMinutes =
           parseInt(appointment.appointmentTime.slice(0, 2)) * 60 +
@@ -170,11 +150,11 @@ export const validateBookingValues = async (
           appointmentTimeMinutes - appointmentMinutes < 30 &&
           appointmentTimeMinutes - appointmentMinutes > -30
         ) {
-          isLawyerFree = false;
+          isExpertFree = false;
         }
       });
 
-      isLawyerFree === false &&
+      isExpertFree === false &&
         setErrors({
           ...errors,
           time: "Lawyer is not available at that  Time. Please Choose another one.",

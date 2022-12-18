@@ -148,7 +148,7 @@
 
 .categoriesGrid {
   display: grid;
-  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-columns: 45% 45%;
   width: 80vw;
   gap: 20px;
   justify-content: left;

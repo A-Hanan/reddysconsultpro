@@ -54,13 +54,6 @@ const VideoCall = () => {
           let rec =
             user.userType === "expert" ? res.data.user : res.data.expert;
           setReceiver(rec);
-          // setMe(user?.id);
-          // api
-          //   .get(
-          //     "http://localhost:5000/api/users/getUserBy?userId=" + idOfReceiver
-          //   )
-          //   .then((res) => setReceiver(res.data[0]))
-          //   .catch((error) => console.error(error));
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appointmentId]);
@@ -118,17 +111,3 @@ const VideoCall = () => {
 };
 
 export default VideoCall;
-
-// const videoCall = () => {
-//   return (
-//     <div>
-//       <Navbar />
-//       <VideoPlayer />
-//       <Options>
-//         <Notifications />
-//       </Options>
-//     </div>
-//   );
-// };
-
-// export default videoCall;

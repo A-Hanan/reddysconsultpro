@@ -15,12 +15,6 @@ export const cancelAppointment = async (id, router) => {
       });
     Swal.fire("Cancelled! ", "success");
     router.push("/experts");
-
-    // if (currentUser?.userType == "lawyer") {
-    //   navigate("/dashboard/cancelled__appointments");
-    // } else {
-    //   navigate("/dashboard/cancelled__appointments");
-    // }
   } catch (error) {
     console.log(error.message);
   }
