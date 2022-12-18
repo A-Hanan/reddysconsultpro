@@ -155,6 +155,9 @@
   margin-top: 26px;
   @include placeitCenter;
   width: 80vw;
+  @include media("<=500px") {
+    width: 95vw;
+  }
 
   h1 {
     margin-top: 30px;
@@ -191,7 +194,8 @@
   }
   @include media("<=500px") {
     flex-direction: column;
-    grid-template-columns: 90%;
+    grid-template-columns: 49% 49%;
+    // grid-template-columns: 90%;
   }
 
   div {
@@ -232,6 +236,9 @@
       flex-direction: row;
       p {
         @include paraTypography(1rem);
+        @include media("<=500px") {
+          font-size: 0.8rem;
+        }
         font-weight: 400;
         margin-left: 10px;
       }
@@ -249,6 +256,9 @@
       color: $grayishBlack;
       font-weight: 500;
       padding-left: 10px;
+      @include media("<=500px") {
+        font-size: 0.85rem;
+      }
     }
   }
 }
