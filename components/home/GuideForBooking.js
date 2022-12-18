@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const GuideForBooking = () => {
+  const router = useRouter();
   const [screenBg, setScreenBg] = useState(1);
   useEffect(() => {
     setTimeout(() => {
@@ -73,7 +76,9 @@ const GuideForBooking = () => {
               <span>Book</span> a Confirmed Appointment within Seconds
             </p>
           </div>
-          <button>Find an Expert</button>
+          <button onClick={() => router.push("/experts")}>
+            Find an Expert
+          </button>
         </div>
       </div>
     </div>

@@ -5,8 +5,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import api from "../../utils/api";
 import StarIcon from "@mui/icons-material/Star";
+import { useStateValue } from "../../StateProvider";
 
 const ExpertBox = ({ expert }) => {
+  const [{ activeCategory, user, mobileViewShowDashboard }, dispatch] =
+    useStateValue();
   const router = useRouter();
   const [rating, setRating] = useState(0);
   const [ratingCount, setRatingCount] = useState(0);
@@ -87,7 +90,7 @@ const ExpertBox = ({ expert }) => {
       <p>${expert?.minFee}/min</p>
       <p>{expert?.category}</p>
 
-      <Link href={"/book-appointment/" + expert?._id}>
+      <Link href={user ? "/book-appointment/" + expert?._id : "/login"}>
         <button
         // onClick={() => router.push("/book-appointment/" + expert?._id)}
         >

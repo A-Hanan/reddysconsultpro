@@ -114,6 +114,11 @@
   flex-direction: column;
   gap: 12px;
   border-bottom: 1px solid lightgray;
+  cursor: pointer;
+  input {
+    cursor: pointer;
+    display: none;
+  }
 }
 .date__selector__container > label {
 }

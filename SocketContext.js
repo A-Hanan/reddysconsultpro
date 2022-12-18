@@ -14,6 +14,7 @@ import React, {
 } from "react";
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
+import { useRouter } from "next/router";
 
 const SocketContext = createContext();
 
@@ -24,6 +25,7 @@ const socket = io("https://consultproapi.herokuapp.com", {
 // const socket = io("https://warm-wildwood-81069.herokuapp.com");
 
 const ContextProvider = ({ children }) => {
+  const router = useRouter();
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
   const [stream, setStream] = useState();
@@ -38,23 +40,37 @@ const ContextProvider = ({ children }) => {
   const connectionRef = useRef();
 
   useEffect(() => {
-    navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
-      // .getUserMedia({ video: showMyVideo, audio: showMyAudio })
-      .then((currentStream) => {
-        setStream(currentStream);
-        try {
-          myVideo.current.srcObject = currentStream;
-        } catch (err) {
-          console.log(err);
-        }
+    // alert("pathname", router?.pathname);
+    console.log("router details", router);
+    if (router?.pathname == "/video-chat/[appointmentId]") {
+      navigator.mediaDevices
+        .getUserMedia({ video: true, audio: true })
+        // .getUserMedia({ video: showMyVideo, audio: showMyAudio })
+        .then((currentStream) => {
+          setStream(currentStream);
+          try {
+            myVideo.current.srcObject = currentStream;
+          } catch (err) {
+            console.log(err);
+          }
 
-        // console.log(" myVideo.current.srcObject", myVideo.current.srcObject);
-        // console.log(" myVideo.current", myVideo.current);
-        // console.log(" myVideo", myVideo);
-        // console.log(" currentStream", currentStream);
-        // userVideo.current.srcObject = currentStream.streams[0];
-      });
+          // console.log(" myVideo.current.srcObject", myVideo.current.srcObject);
+          // console.log(" myVideo.current", myVideo.current);
+          // console.log(" myVideo", myVideo);
+          // console.log(" currentStream", currentStream);
+          // userVideo.current.srcObject = currentStream.streams[0];
+        });
+    } else {
+      navigator.mediaDevices
+        .getUserMedia({ video: false, audio: true })
+        .then((stream) => {
+          stream.getTracks().forEach(function (track) {
+            if (track.readyState == "live") {
+              track.stop();
+            }
+          });
+        });
+    }
 
     socket.on("me", (id) => setMe(id));
 
@@ -77,7 +93,7 @@ const ContextProvider = ({ children }) => {
         setCallEnded(true);
       }
     });
-  }, [name, showMyAudio, showMyVideo]);
+  }, [name, showMyAudio, showMyVideo, router]);
   const addUser = (id) => {
     // console.log("socketContext>>>> ", id);
     socket.emit("addUser", id);

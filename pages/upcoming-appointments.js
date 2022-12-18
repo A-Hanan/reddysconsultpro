@@ -85,61 +85,71 @@ const UpcomingAppointments = () => {
             <h1 style={{ textAlign: "center" }} className={styles.heading}>
               Upcoming Appointments
             </h1>
-            {appointments.map((appointment, i) => (
-              <div className={styles.upcoming__appointment} key={i}>
-                <p className={styles.remaining__time}>
-                  {dateDifference(
-                    new Date(appointment?.appointmentDate),
-                    new Date()
-                  )}{" "}
-                  Days Left
-                </p>
+            {appointments
+              .sort(
+                (objA, objB) =>
+                  Number(new Date(objA?.appointmentDate)) -
+                  Number(new Date(objB?.appointmentDate))
+              )
+              .map((appointment, i) => (
+                <div className={styles.upcoming__appointment} key={i}>
+                  <p className={styles.remaining__time}>
+                    {dateDifference(
+                      new Date(appointment?.appointmentDate),
+                      new Date()
+                    )}{" "}
+                    Days Left
+                  </p>
 
-                <div className={styles.row__one}>
-                  <div className={styles.expert__info}>
-                    <Image
-                      src={
-                        appointment.expert.profile
-                          ? appointment.expert.profile
-                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODZob7ROpqlx8WXwjueNwTOlC6Qum-yMiyfXiFRXkdhkHgybCpdvM1UpaXCL1ycfO8NI&usqp=CAU"
-                      }
-                      width={60}
-                      height={60}
-                      alt="profile"
-                    />
-                    <h3>
-                      {user?.userType == "user"
-                        ? appointment.expert?.name
-                        : appointment.user?.firstName +
-                          " " +
-                          appointment.user?.lastName}
-                    </h3>
-                    {/* <h5>(Expert)</h5> */}
-                    <h5>{user?.userType == "user" ? "(Expert)" : "(User)"}</h5>
+                  <div className={styles.row__one}>
+                    <div className={styles.expert__info}>
+                      <Image
+                        src={
+                          appointment.expert.profile
+                            ? appointment.expert.profile
+                            : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODZob7ROpqlx8WXwjueNwTOlC6Qum-yMiyfXiFRXkdhkHgybCpdvM1UpaXCL1ycfO8NI&usqp=CAU"
+                        }
+                        width={60}
+                        height={60}
+                        alt="profile"
+                      />
+                      <h3>
+                        {user?.userType == "user"
+                          ? appointment.expert?.name
+                          : appointment.user?.firstName +
+                            " " +
+                            appointment.user?.lastName}
+                      </h3>
+                      {/* <h5>(Expert)</h5> */}
+                      <h5>
+                        {user?.userType == "user" ? "(Expert)" : "(User)"}
+                      </h5>
+                    </div>
+                    <div className={styles.appointment__info}>
+                      <span className={styles.label}>Appointment Date </span>
+                      <h6>
+                        {new Date(appointment.appointmentDate).toDateString()}
+                      </h6>
+                      <span className={styles.label}>Appointment Time </span>
+                      <h6>{appointment.appointmentTime}</h6>
+                    </div>
                   </div>
-                  <div className={styles.appointment__info}>
-                    <span className={styles.label}>Appointment Date </span>
-                    <h6>
-                      {new Date(appointment.appointmentDate).toDateString()}
-                    </h6>
-                    <span className={styles.label}>Appointment Time </span>
-                    <h6>{appointment.appointmentTime}</h6>
-                  </div>
-                </div>
 
-                <div className={styles.row__two}>
-                  <div>
-                    <span className={styles.label}>Appointment Title: </span>
-                    <h6>{appointment.title}</h6>
+                  <div className={styles.row__two}>
+                    <div>
+                      <span className={styles.label}>Appointment Title: </span>
+                      <h6>{appointment.title}</h6>
+                    </div>
+                    <div>
+                      {" "}
+                      <h3 className={styles.label}>
+                        {appointment.description}
+                      </h3>
+                      <h6></h6>
+                    </div>
                   </div>
-                  <div>
-                    {" "}
-                    <h3 className={styles.label}>{appointment.description}</h3>
-                    <h6></h6>
-                  </div>
-                </div>
-                <div className={styles.row__three}>
-                  {/* <button
+                  <div className={styles.row__three}>
+                    {/* <button
                       className={styles.cancel__btn}
                       onClick={() => {
                         cancelAppointment(appointment._id, user);
@@ -154,7 +164,7 @@ const UpcomingAppointments = () => {
                      
                     </button> */}
 
-                  {/* <button
+                    {/* <button
                       className={styles.chat__btn}
                       // onClick={(e) => {
                       //   // navigate(`/messages/${expert?._id}`);
@@ -170,20 +180,20 @@ const UpcomingAppointments = () => {
                       chat&nbsp;
                    
                     </button> */}
+                  </div>
+                  {user?.userType === "expert" && (
+                    <button
+                      className={styles.setNow__btn}
+                      onClick={(e) => {
+                        setNow(e, appointment._id);
+                      }}
+                      style={{}}
+                    >
+                      Set Now
+                    </button>
+                  )}
                 </div>
-                {user?.userType === "expert" && (
-                  <button
-                    className={styles.setNow__btn}
-                    onClick={(e) => {
-                      setNow(e, appointment._id);
-                    }}
-                    style={{}}
-                  >
-                    Set Now
-                  </button>
-                )}
-              </div>
-            ))}
+              ))}
           </>
         ) : (
           <h1 className={styles.appointments__not__found__info}>

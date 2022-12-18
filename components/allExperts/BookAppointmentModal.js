@@ -23,12 +23,21 @@ const BookAppointmentModal = ({
   const [errors, setErrors] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  useEffect(() => {
+    let t1 =
+      expert?.category?.split(" ")[0] == "O1"
+        ? expert?.category?.split(" ")[1]
+        : expert?.category?.split(" ")[0];
+    let t2 = expert?.name?.split(" ")[0];
+    let t3 = currentUser?.firstName;
+    setTitle(t1 + " " + t2 + "-" + t3 + " 30 minutes");
+  }, [expert]);
   const bookAppointment = (e) => {
     e.preventDefault();
     let errrors = {};
-    if (description === "") {
-      errrors.description = "required";
-    }
+    // if (description === "") {
+    //   errrors.description = "required";
+    // }
     if (title === "") {
       errrors.title = "required";
     }
@@ -44,6 +53,7 @@ const BookAppointmentModal = ({
         expertId: expert?._id,
         user: currentUser,
         expert: expert,
+        status: expert?.minFee > 0 ? "Pending" : "Confirmed",
       };
       bookAppointmentAction(bookAppointmentValues, router);
     }
@@ -75,6 +85,7 @@ const BookAppointmentModal = ({
         defaultValue={description}
         name="description"
         required
+        placeholder="(optional)"
         onChange={(e) => setDescription(e.target.value)}
       />
       {errors.description && (

@@ -14,7 +14,7 @@ export const bookAppointmentAction = async (bookAppointmentValues, router) => {
   let response;
   await api
     .post("/appointment", bookAppointmentValues)
-    .then((res) => {
+    .then(async (res) => {
       console.log("res of booking appointment>", res);
       response = res;
       Swal.fire("Booked Successfully, Waiting for Payment!", "", "success");
@@ -27,7 +27,18 @@ export const bookAppointmentAction = async (bookAppointmentValues, router) => {
       //     console.log("response from posting notifications", res.data);
       //   })
       //   .catch((err) => console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrr", err));
-      router.push("/pending-appointments");
+      // send-pay-and-confirm-email
+      if (bookAppointmentValues?.expert?.minFee > 0) {
+        await api
+          .post("/auth/send-pay-and-confirm-email",{ appointment:res?.data})
+          .then((res) => {
+            console.log("response from sendig payment mail");
+          })
+          .catch((err) => console.log(err));
+         router.push("/pending-appointments");
+      } else {
+        router.push("/upcoming-appointments");
+      }
     })
     .catch((err) => {
       console.log("error while booking appointment", err);

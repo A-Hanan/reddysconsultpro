@@ -35,6 +35,7 @@ const VideoCall = () => {
   const [receiverId, setReceiverId] = useState();
   const [appointmentId, setAppointmentId] = useState("");
   useEffect(() => {
+    console.log("router", router);
     if (router?.isReady) {
       setAppointmentId(router.query?.appointmentId);
     }

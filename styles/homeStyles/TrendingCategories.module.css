@@ -193,6 +193,9 @@
   box-shadow: none;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
+.categoriesGrid div img {
+  margin-left: 20px;
+}
 .categoriesGrid div span {
   display: flex;
   justify-content: center;
@@ -208,6 +211,7 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-weight: 400;
+  margin-left: 10px;
 }
 .categoriesGrid div span svg {
   font-size: 1rem;

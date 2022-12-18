@@ -210,11 +210,15 @@
     @include media("<=922px") {
       flex: 0.22;
     }
+
     &:hover {
       // background-color: $yellowishColor;
       cursor: pointer;
       box-shadow: none;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+    img {
+      margin-left: 20px;
     }
     // width: 330px;
     gap: 10px;
@@ -229,6 +233,7 @@
       p {
         @include paraTypography(1rem);
         font-weight: 400;
+        margin-left: 10px;
       }
       svg {
         font-size: 1rem;
