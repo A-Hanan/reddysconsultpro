@@ -1,11 +1,12 @@
 import axios from "axios";
 
 // http://localhost:5000/api
+//https://consultproapi.herokuapp.com/api
 const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  baseURL: "https://consultproapi.herokuapp.com/api",
+  baseURL: "http://localhost:5000/api",
   // baseURL: process.env.BASE_API_URL || "http://localhost:5000/api",
 });
 // if (localStorage.token) {

@@ -61,15 +61,17 @@ const ContextProvider = ({ children }) => {
           // userVideo.current.srcObject = currentStream.streams[0];
         });
     } else {
-      navigator.mediaDevices
-        .getUserMedia({ video: false, audio: true })
-        .then((stream) => {
-          stream.getTracks().forEach(function (track) {
-            if (track.readyState == "live") {
-              track.stop();
-            }
-          });
+      if (stream) {
+        // navigator.mediaDevices
+        //   .getUserMedia({ video: false, audio: true })
+        //   .then((stream) => {
+        stream.getTracks().forEach(function (track) {
+          if (track.readyState == "live") {
+            track.stop();
+          }
         });
+        // });
+      }
     }
 
     socket.on("me", (id) => setMe(id));
