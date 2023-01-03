@@ -213,7 +213,7 @@ const Login = ({ setShowAuthForm, fromNavbar }) => {
             </div>
           )}
 
-          {/* {formType == "signIn" && (
+          {formType == "signIn" && (
             <div className={styles.radio__options__usertype}>
               <h1>Login as</h1>
               <div>
@@ -226,9 +226,8 @@ const Login = ({ setShowAuthForm, fromNavbar }) => {
                   <labe>expert</labe>
                 </div>
               </div>
-           
             </div>
-          )} */}
+          )}
 
           <button onClick={() => submitForm()}>Continue</button>
           {formType == "signIn" && (
