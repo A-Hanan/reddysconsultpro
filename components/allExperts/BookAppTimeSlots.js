@@ -228,12 +228,14 @@ const BookApptimeSlots = ({ expert }) => {
     <div className={styles.BookAppTimeSlots}>
       <div className={styles.date__selector__container}>
         <lable>Select Date</lable>
+
         <div
           style={{
             cursor: "pointer",
             border: "1px solid lightgray",
             width: "max-content",
             padding: "3px",
+            minWidth: "500px",
           }}
         >
           <DatePicker selected={date} onChange={(date) => setDate(date)} />
@@ -241,6 +243,7 @@ const BookApptimeSlots = ({ expert }) => {
       </div>
       <div className={styles.time__selector__container}>
         <lable>Select Time</lable>
+
         <div className={styles.time__slots}>
           {slots.map((slot, i) => (
             <input
